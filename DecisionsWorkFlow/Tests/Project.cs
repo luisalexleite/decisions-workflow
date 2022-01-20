@@ -6,16 +6,18 @@ using System.Threading.Tasks;
 
 namespace DecisionsWorkFlow.Tests
 {
-    internal class Projects
+    public class Project
     {
+        public static int id = 0;
         public string name;
         public string description;
         public DateTime creationDate;
         public int user;
         public bool state;
 
-        public Projects(string _name, string _description, DateTime _creationDate, int _user, bool _state)
+        public Project(string _name, string _description, DateTime _creationDate, int _user, bool _state)
         {
+            id += 1;
             name = _name;
             description = _description;
             creationDate = _creationDate;

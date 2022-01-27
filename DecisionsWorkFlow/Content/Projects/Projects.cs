@@ -6,6 +6,8 @@ using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Globalization;
+using System.Reflection;
 using System.Windows.Forms;
 using ComponentFactory.Krypton.Toolkit;
 using DecisionsWorkFlow.Content.Projects;
@@ -13,7 +15,7 @@ using DecisionsWorkFlow.Tests;
 
 namespace DecisionsWorkFlow
 {
-    public partial class Form1 : KryptonForm
+    public partial class Projects : KryptonForm
     {
         private List<Project> projects = new List<Project>();
 
@@ -22,7 +24,7 @@ namespace DecisionsWorkFlow
         private string queryTextTerminated = "";
 
         private bool defaultText = false;
-        public Form1()
+        public Projects()
         {
             projects.Add(new Project("Construir um Avião", "Os intervenientes neste projeto devem construir um avião", new DateTime(), 1, true));
             projects.Add(new Project("Construir um Carro", "Os intervenientes neste projeto devem construir um carro", new DateTime(), 1, true));
@@ -58,6 +60,8 @@ namespace DecisionsWorkFlow
 
         public void Form1_Load(object sender, EventArgs e)
         {
+            comboBox1.SelectedIndex = 0;
+            comboBox2.SelectedIndex = 0;
             LoadPanels();
         }
 
@@ -134,7 +138,9 @@ namespace DecisionsWorkFlow
 
         private void iconButton5_Click(object sender, EventArgs e)
         {
-            this.Refresh();
+            Projects fr = new Projects();
+            fr.Show();
+            this.Hide();
         }
 
         private void kryptonTextBox1_Enter(object sender, EventArgs e)
@@ -191,6 +197,26 @@ namespace DecisionsWorkFlow
             }
             defaultText = false;
             LoadPanels();
+        }
+
+        private void flowLayoutPanel1_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label5_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void comboBox2_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }

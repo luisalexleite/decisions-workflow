@@ -1,106 +1,85 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.ComponentModel;
 using System.Data;
 using System.Drawing;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Globalization;
-using System.Reflection;
 using System.Windows.Forms;
 using ComponentFactory.Krypton.Toolkit;
 using DecisionsWorkFlow.Content.Projects;
-using DecisionsWorkFlow.Tests;
+using DecisionsWorkFlow.Database;
 
 namespace DecisionsWorkFlow
 {
     public partial class Projects : KryptonForm
     {
-        private List<Project> projects = new List<Project>();
+        private DatabaseContent database = new DatabaseContent();
+
+        public int user;
 
         private string queryTextActive = "";
 
         private string queryTextTerminated = "";
 
         private bool defaultText = false;
-        public Projects()
+
+        public Projects(int _user)
         {
-            projects.Add(new Project("Construir um Avião", "Os intervenientes neste projeto devem construir um avião", new DateTime(), 1, true));
-            projects.Add(new Project("Construir um Carro", "Os intervenientes neste projeto devem construir um carro", new DateTime(), 1, true));
-            projects.Add(new Project("Construir um Camião", "Os intervenientes neste projeto devem construir um camião", new DateTime(), 1, false));
-            projects.Add(new Project("Construir uma Ponte", "Os intervenientes neste projeto devem construir uma Ponte", new DateTime(), 1, true));
-            projects.Add(new Project("Construir uma Avionete", "Os intervenientes neste projeto devem construir um avionete", new DateTime(), 2, true));
-            projects.Add(new Project("Fazer uma Viagem", "Os intervenientes neste projeto fazer uma viagem", new DateTime(), 1, false));
-            projects.Add(new Project("Construir uma Avionete", "Os intervenientes neste projeto devem construir um avionete", new DateTime(), 2, true));
-            projects.Add(new Project("Fazer uma Viagem", "Os intervenientes neste projeto fazer uma viagem", new DateTime(), 1, false));
-            projects.Add(new Project("Construir uma Avionete", "Os intervenientes neste projeto devem construir um avionete", new DateTime(), 2, true));
-            projects.Add(new Project("Fazer uma Viagem", "Os intervenientes neste projeto fazer uma viagem", new DateTime(), 1, false));
-            projects.Add(new Project("Construir uma Avionete", "Os intervenientes neste projeto devem construir um avionete", new DateTime(), 2, true));
-            projects.Add(new Project("Fazer uma Viagem", "Os intervenientes neste projeto fazer uma viagem", new DateTime(), 1, false));
-            projects.Add(new Project("Construir uma Avionete", "Os intervenientes neste projeto devem construir um avionete", new DateTime(), 2, true));
-            projects.Add(new Project("Fazer uma Viagem", "Os intervenientes neste projeto fazer uma viagem", new DateTime(), 1, false));
-            projects.Add(new Project("Construir uma Avionete", "Os intervenientes neste projeto devem construir um avionete", new DateTime(), 2, true));
-            projects.Add(new Project("Fazer uma Viagem", "Os intervenientes neste projeto fazer uma viagem", new DateTime(), 1, false));
-            projects.Add(new Project("Construir uma Avionete", "Os intervenientes neste projeto devem construir um avionete", new DateTime(), 2, true));
-            projects.Add(new Project("Fazer uma Viagem", "Os intervenientes neste projeto fazer uma viagem", new DateTime(), 1, false));
-            projects.Add(new Project("Construir uma Avionete", "Os intervenientes neste projeto devem construir um avionete", new DateTime(), 2, true));
-            projects.Add(new Project("Fazer uma Viagem", "Os intervenientes neste projeto fazer uma viagem", new DateTime(), 1, false));
-            projects.Add(new Project("Construir uma Avionete", "Os intervenientes neste projeto devem construir um avionete", new DateTime(), 2, true));
-            projects.Add(new Project("Fazer uma Viagem", "Os intervenientes neste projeto fazer uma viagem", new DateTime(), 1, false));
-            projects.Add(new Project("Construir uma Avionete", "Os intervenientes neste projeto devem construir um avionete", new DateTime(), 2, true));
-            projects.Add(new Project("Fazer uma Viagem", "Os intervenientes neste projeto fazer uma viagem", new DateTime(), 1, false));
-            projects.Add(new Project("Construir uma Avionete", "Os intervenientes neste projeto devem construir um avionete", new DateTime(), 2, true));
-            projects.Add(new Project("Fazer uma Viagem", "Os intervenientes neste projeto fazer uma viagem", new DateTime(), 1, false));
-            projects.Add(new Project("Construir uma Avionete", "Os intervenientes neste projeto devem construir um avionete", new DateTime(), 2, true));
-            projects.Add(new Project("Fazer uma Viagem", "Os intervenientes neste projeto fazer uma viagem", new DateTime(), 1, false));
+            user = _user;
             InitializeComponent();
         }
 
 
         public void Form1_Load(object sender, EventArgs e)
         {
+            string username = database.GetUserData(user)?.fname + " " + database.GetUserData(user)?.lname;
             comboBox1.SelectedIndex = 0;
             comboBox2.SelectedIndex = 0;
+            this.Text = "Decisions WorkFlow - Projetos (" + username + ")";
+            label3.Text = "| " +  username;
             LoadPanels();
         }
 
-        public void LoadPanels()
+        private Label NoResults()
         {
             Label labelWarning = new Label();
             labelWarning.Text = "Não foi encontrado nenhum resultado.";
             labelWarning.ForeColor = SystemColors.ActiveCaptionText;
             labelWarning.AutoSize = true;
 
+            return labelWarning;
+        }
+
+        public void LoadPanels()
+        {
             flowLayoutPanel1.Controls.Clear();
             flowLayoutPanel2.Controls.Clear();
 
-            var activeCheck = projects.Where(p => p.state == true).Where(p => p.name.ToLower().Contains(queryTextActive.ToLower())).ToList();
+            var activeCheck = database.GetProjectList(user, false, queryTextActive, comboBox1.SelectedIndex);
+
             activeCheck.ForEach(project =>
             {
-                ProjectInfo userControl = new ProjectInfo(true, project.name, project.description);
+                ProjectInfo userControl = new ProjectInfo(true, project.project_name, project.project_desc, project.id, this);
                 flowLayoutPanel1.Controls.Add(userControl);
 
             });
 
             if (activeCheck.Count() == 0)
             {
-                flowLayoutPanel1.Controls.Add(labelWarning);
+                flowLayoutPanel1.Controls.Add(NoResults());
             }
 
-            var terminatedCheck = projects.Where(p => p.state == false).Where(p => p.name.ToLower().Contains(queryTextTerminated.ToLower())).ToList();
+            var terminatedCheck = database.GetProjectList(user, true, queryTextTerminated, comboBox2.SelectedIndex);
 
             terminatedCheck.ForEach(project =>
             {
-                ProjectInfo userControl = new ProjectInfo(false, project.name, project.description);
+                ProjectInfo userControl = new ProjectInfo(false, project.project_name, project.project_desc, project.id, this);
                 flowLayoutPanel2.Controls.Add(userControl);
 
             });
 
             if (terminatedCheck.Count() == 0)
             {
-
-                flowLayoutPanel2.Controls.Add(labelWarning);
+                flowLayoutPanel2.Controls.Add(NoResults());
             }
         }
 
@@ -136,11 +115,16 @@ namespace DecisionsWorkFlow
             }
         }
 
+        private void Reload()
+        {
+            Projects pr = new Projects(user);
+            pr.Show();
+            this.Hide();
+        }
+
         private void iconButton5_Click(object sender, EventArgs e)
         {
-            Projects fr = new Projects();
-            fr.Show();
-            this.Hide();
+            Reload();
         }
 
         private void kryptonTextBox1_Enter(object sender, EventArgs e)
@@ -199,24 +183,19 @@ namespace DecisionsWorkFlow
             LoadPanels();
         }
 
-        private void flowLayoutPanel1_Paint(object sender, PaintEventArgs e)
-        {
-
-        }
-
         private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
         {
-
-        }
-
-        private void label5_Click(object sender, EventArgs e)
-        {
-
+            LoadPanels();
         }
 
         private void comboBox2_SelectedIndexChanged(object sender, EventArgs e)
         {
+            LoadPanels();
+        }
 
+        public void OnOpen()
+        {
+            Reload();
         }
     }
 }

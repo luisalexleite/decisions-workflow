@@ -36,8 +36,12 @@
             this.label2 = new System.Windows.Forms.Label();
             this.kryptonTextBox1 = new ComponentFactory.Krypton.Toolkit.KryptonTextBox();
             this.kryptonGroup1 = new ComponentFactory.Krypton.Toolkit.KryptonGroup();
+            this.comboBox1 = new System.Windows.Forms.ComboBox();
+            this.label4 = new System.Windows.Forms.Label();
             this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
             this.kryptonGroup2 = new ComponentFactory.Krypton.Toolkit.KryptonGroup();
+            this.comboBox2 = new System.Windows.Forms.ComboBox();
+            this.label5 = new System.Windows.Forms.Label();
             this.flowLayoutPanel2 = new System.Windows.Forms.FlowLayoutPanel();
             this.kryptonTextBox2 = new ComponentFactory.Krypton.Toolkit.KryptonTextBox();
             this.label3 = new System.Windows.Forms.Label();
@@ -47,10 +51,6 @@
             this.iconButton5 = new FontAwesome.Sharp.IconButton();
             this.iconButton4 = new FontAwesome.Sharp.IconButton();
             this.iconButton3 = new FontAwesome.Sharp.IconButton();
-            this.label4 = new System.Windows.Forms.Label();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
-            this.comboBox2 = new System.Windows.Forms.ComboBox();
-            this.label5 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.kryptonGroup1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.kryptonGroup1.Panel)).BeginInit();
             this.kryptonGroup1.Panel.SuspendLayout();
@@ -250,9 +250,41 @@
             this.kryptonGroup1.Panel.Controls.Add(this.label4);
             this.kryptonGroup1.Panel.Controls.Add(this.flowLayoutPanel1);
             this.kryptonGroup1.Panel.Controls.Add(this.kryptonTextBox1);
-            this.kryptonGroup1.Size = new System.Drawing.Size(1218, 411);
+            this.kryptonGroup1.Size = new System.Drawing.Size(1218, 400);
             this.kryptonGroup1.StateCommon.Back.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(250)))), ((int)(((byte)(252)))), ((int)(((byte)(252)))));
+            this.kryptonGroup1.StateCommon.Border.Color1 = System.Drawing.SystemColors.ActiveCaptionText;
+            this.kryptonGroup1.StateCommon.Border.DrawBorders = ((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders)((((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Top | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Bottom) 
+            | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Left) 
+            | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Right)));
+            this.kryptonGroup1.StateCommon.Border.Rounding = 12;
+            this.kryptonGroup1.StateCommon.Border.Width = 1;
             this.kryptonGroup1.TabIndex = 29;
+            // 
+            // comboBox1
+            // 
+            this.comboBox1.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.comboBox1.Font = new System.Drawing.Font("Microsoft JhengHei UI", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.comboBox1.Items.AddRange(new object[] {
+            "Nome (Asc.)",
+            "Nome (Desc.)",
+            "Data (Asc.)",
+            "Data (Desc)"});
+            this.comboBox1.Location = new System.Drawing.Point(803, 20);
+            this.comboBox1.Name = "comboBox1";
+            this.comboBox1.Size = new System.Drawing.Size(147, 30);
+            this.comboBox1.TabIndex = 32;
+            this.comboBox1.Tag = "";
+            this.comboBox1.SelectedIndexChanged += new System.EventHandler(this.comboBox1_SelectedIndexChanged);
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Font = new System.Drawing.Font("Microsoft JhengHei UI", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label4.Location = new System.Drawing.Point(674, 22);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(117, 22);
+            this.label4.TabIndex = 31;
+            this.label4.Text = "Ordenar por:";
             // 
             // flowLayoutPanel1
             // 
@@ -260,13 +292,12 @@
             this.flowLayoutPanel1.AutoScrollMargin = new System.Drawing.Size(10, 10);
             this.flowLayoutPanel1.Location = new System.Drawing.Point(12, 65);
             this.flowLayoutPanel1.Name = "flowLayoutPanel1";
-            this.flowLayoutPanel1.Size = new System.Drawing.Size(1201, 345);
+            this.flowLayoutPanel1.Size = new System.Drawing.Size(1201, 320);
             this.flowLayoutPanel1.TabIndex = 30;
-            this.flowLayoutPanel1.Paint += new System.Windows.Forms.PaintEventHandler(this.flowLayoutPanel1_Paint);
             // 
             // kryptonGroup2
             // 
-            this.kryptonGroup2.Location = new System.Drawing.Point(40, 638);
+            this.kryptonGroup2.Location = new System.Drawing.Point(40, 666);
             this.kryptonGroup2.Name = "kryptonGroup2";
             // 
             // kryptonGroup2.Panel
@@ -275,17 +306,48 @@
             this.kryptonGroup2.Panel.Controls.Add(this.label5);
             this.kryptonGroup2.Panel.Controls.Add(this.flowLayoutPanel2);
             this.kryptonGroup2.Panel.Controls.Add(this.kryptonTextBox2);
-            this.kryptonGroup2.Size = new System.Drawing.Size(1218, 411);
+            this.kryptonGroup2.Size = new System.Drawing.Size(1218, 400);
             this.kryptonGroup2.StateCommon.Back.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(250)))), ((int)(((byte)(252)))), ((int)(((byte)(252)))));
+            this.kryptonGroup2.StateCommon.Border.Color1 = System.Drawing.SystemColors.ActiveCaptionText;
+            this.kryptonGroup2.StateCommon.Border.DrawBorders = ((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders)((((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Top | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Bottom) 
+            | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Left) 
+            | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Right)));
+            this.kryptonGroup2.StateCommon.Border.Rounding = 12;
             this.kryptonGroup2.TabIndex = 32;
             this.kryptonGroup2.Visible = false;
+            // 
+            // comboBox2
+            // 
+            this.comboBox2.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.comboBox2.Font = new System.Drawing.Font("Microsoft JhengHei UI", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.comboBox2.Items.AddRange(new object[] {
+            "Nome (Asc.)",
+            "Nome (Desc.)",
+            "Data (Asc.)",
+            "Data (Desc)"});
+            this.comboBox2.Location = new System.Drawing.Point(803, 19);
+            this.comboBox2.Name = "comboBox2";
+            this.comboBox2.Size = new System.Drawing.Size(147, 30);
+            this.comboBox2.TabIndex = 34;
+            this.comboBox2.Tag = "";
+            this.comboBox2.SelectedIndexChanged += new System.EventHandler(this.comboBox2_SelectedIndexChanged);
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Font = new System.Drawing.Font("Microsoft JhengHei UI", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label5.Location = new System.Drawing.Point(674, 21);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(117, 22);
+            this.label5.TabIndex = 33;
+            this.label5.Text = "Ordenar por:";
             // 
             // flowLayoutPanel2
             // 
             this.flowLayoutPanel2.AutoScroll = true;
             this.flowLayoutPanel2.Location = new System.Drawing.Point(12, 65);
             this.flowLayoutPanel2.Name = "flowLayoutPanel2";
-            this.flowLayoutPanel2.Size = new System.Drawing.Size(1201, 345);
+            this.flowLayoutPanel2.Size = new System.Drawing.Size(1201, 320);
             this.flowLayoutPanel2.TabIndex = 30;
             // 
             // kryptonTextBox2
@@ -324,12 +386,13 @@
             // 
             // label3
             // 
-            this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(905, 71);
+            this.label3.Location = new System.Drawing.Point(719, 71);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(72, 17);
+            this.label3.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
+            this.label3.Size = new System.Drawing.Size(258, 17);
             this.label3.TabIndex = 33;
-            this.label3.Text = "John Doe |";
+            this.label3.Text = "| John Doe";
+            this.label3.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // iconButton6
             // 
@@ -337,6 +400,7 @@
             this.iconButton6.CausesValidation = false;
             this.iconButton6.Cursor = System.Windows.Forms.Cursors.Hand;
             this.iconButton6.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.iconButton6.Font = new System.Drawing.Font("Microsoft YaHei UI", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.iconButton6.IconChar = FontAwesome.Sharp.IconChar.UserAltSlash;
             this.iconButton6.IconColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.iconButton6.IconFont = FontAwesome.Sharp.IconFont.Auto;
@@ -356,6 +420,7 @@
             this.iconButton2.CausesValidation = false;
             this.iconButton2.Cursor = System.Windows.Forms.Cursors.Hand;
             this.iconButton2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.iconButton2.Font = new System.Drawing.Font("Microsoft YaHei UI", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.iconButton2.IconChar = FontAwesome.Sharp.IconChar.User;
             this.iconButton2.IconColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.iconButton2.IconFont = FontAwesome.Sharp.IconFont.Auto;
@@ -373,6 +438,7 @@
             // 
             this.iconButton1.Cursor = System.Windows.Forms.Cursors.Hand;
             this.iconButton1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.iconButton1.Font = new System.Drawing.Font("Microsoft YaHei UI", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.iconButton1.IconChar = FontAwesome.Sharp.IconChar.Upload;
             this.iconButton1.IconColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.iconButton1.IconFont = FontAwesome.Sharp.IconFont.Auto;
@@ -391,6 +457,7 @@
             this.iconButton5.CausesValidation = false;
             this.iconButton5.Cursor = System.Windows.Forms.Cursors.Hand;
             this.iconButton5.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.iconButton5.Font = new System.Drawing.Font("Microsoft YaHei", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.iconButton5.IconChar = FontAwesome.Sharp.IconChar.Sync;
             this.iconButton5.IconColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.iconButton5.IconFont = FontAwesome.Sharp.IconFont.Auto;
@@ -410,6 +477,7 @@
             this.iconButton4.CausesValidation = false;
             this.iconButton4.Cursor = System.Windows.Forms.Cursors.Hand;
             this.iconButton4.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.iconButton4.Font = new System.Drawing.Font("Microsoft YaHei UI", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.iconButton4.IconChar = FontAwesome.Sharp.IconChar.TimesCircle;
             this.iconButton4.IconColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.iconButton4.IconFont = FontAwesome.Sharp.IconFont.Auto;
@@ -428,6 +496,7 @@
             this.iconButton3.CausesValidation = false;
             this.iconButton3.Cursor = System.Windows.Forms.Cursors.Hand;
             this.iconButton3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.iconButton3.Font = new System.Drawing.Font("Microsoft YaHei UI", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.iconButton3.IconChar = FontAwesome.Sharp.IconChar.PlusSquare;
             this.iconButton3.IconColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.iconButton3.IconFont = FontAwesome.Sharp.IconFont.Auto;
@@ -440,57 +509,6 @@
             this.iconButton3.Text = "Adicionar Projeto";
             this.iconButton3.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.iconButton3.UseVisualStyleBackColor = true;
-            // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.Font = new System.Drawing.Font("Microsoft JhengHei UI", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(674, 22);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(117, 22);
-            this.label4.TabIndex = 31;
-            this.label4.Text = "Ordenar por:";
-            // 
-            // comboBox1
-            // 
-            this.comboBox1.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.comboBox1.Font = new System.Drawing.Font("Microsoft JhengHei UI", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.comboBox1.Items.AddRange(new object[] {
-            "Nome (Desc.)",
-            "Nome (Asc.)",
-            "Data (Desc.)",
-            "Data (Desc)"});
-            this.comboBox1.Location = new System.Drawing.Point(803, 20);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(147, 30);
-            this.comboBox1.TabIndex = 32;
-            this.comboBox1.Tag = "";
-            this.comboBox1.SelectedIndexChanged += new System.EventHandler(this.comboBox1_SelectedIndexChanged);
-            // 
-            // comboBox2
-            // 
-            this.comboBox2.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.comboBox2.Font = new System.Drawing.Font("Microsoft JhengHei UI", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.comboBox2.Items.AddRange(new object[] {
-            "Nome (Desc.)",
-            "Nome (Asc.)",
-            "Data (Desc.)",
-            "Data (Desc)"});
-            this.comboBox2.Location = new System.Drawing.Point(803, 19);
-            this.comboBox2.Name = "comboBox2";
-            this.comboBox2.Size = new System.Drawing.Size(147, 30);
-            this.comboBox2.TabIndex = 34;
-            this.comboBox2.Tag = "";
-            // 
-            // label5
-            // 
-            this.label5.AutoSize = true;
-            this.label5.Font = new System.Drawing.Font("Microsoft JhengHei UI", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.Location = new System.Drawing.Point(674, 21);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(117, 22);
-            this.label5.TabIndex = 33;
-            this.label5.Text = "Ordenar por:";
             // 
             // Projects
             // 

@@ -1,1 +1,79 @@
-﻿
+﻿<?xml version="1.0" encoding="utf-8"?><Database Name="DecisionsWorkFlow" Class="DatabaseDataContext" xmlns="http://schemas.microsoft.com/linqtosql/dbml/2007">
+  <Connection Mode="AppSettings" ConnectionString="Data Source=dwf.database.windows.net;Initial Catalog=DecisionsWorkFlow;User ID=dwf;Connect Timeout=30;Encrypt=True;TrustServerCertificate=False" SettingsObjectName="DecisionsWorkFlow.Properties.Settings" SettingsPropertyName="DecisionsWorkFlowConnectionString" Provider="System.Data.SqlClient" />
+  <Table Name="dbo.attributes" Member="attributes">
+    <Type Name="attributes">
+      <Column Name="id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="attr_name" Type="System.String" DbType="VarChar(255)" CanBeNull="true" />
+      <Column Name="attr_abbr" Type="System.String" DbType="VarChar(255)" CanBeNull="true" />
+      <Column Name="project_id" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Association Name="attributes_students_attributes" Member="students_attributes" ThisKey="id" OtherKey="attr_id" Type="students_attributes" />
+      <Association Name="projects_attributes" Member="projects" ThisKey="project_id" OtherKey="id" Type="projects" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.projects" Member="projects">
+    <Type Name="projects">
+      <Column Name="id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="project_name" Type="System.String" DbType="VarChar(255) NOT NULL" CanBeNull="false" />
+      <Column Name="project_desc" Type="System.String" DbType="Text" CanBeNull="true" UpdateCheck="Never" />
+      <Column Name="project_admin" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="terminated" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="created_at" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="updated_at" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Association Name="projects_attributes" Member="attributes" ThisKey="id" OtherKey="project_id" Type="attributes" />
+      <Association Name="projects_students" Member="students" ThisKey="id" OtherKey="project_id" Type="students" />
+      <Association Name="projects_users_projects" Member="users_projects" ThisKey="id" OtherKey="project_id" Type="users_projects" />
+      <Association Name="users_projects" Member="users" ThisKey="project_admin" OtherKey="id" Type="users" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.schools" Member="schools">
+    <Type Name="schools">
+      <Column Name="id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="school_name" Type="System.String" DbType="VarChar(255)" CanBeNull="true" />
+      <Column Name="school_abbr" Type="System.String" DbType="VarChar(255)" CanBeNull="true" />
+      <Association Name="schools_students" Member="students" ThisKey="id" OtherKey="school_id" Type="students" />
+    </Type>
+  </Table>
+  <Table Name="dbo.students" Member="students">
+    <Type Name="students">
+      <Column Name="id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="student_id" Type="System.String" DbType="VarChar(255)" CanBeNull="true" />
+      <Column Name="student_name" Type="System.String" DbType="VarChar(255)" CanBeNull="true" />
+      <Column Name="national_code" Type="System.String" DbType="VarChar(255)" CanBeNull="true" />
+      <Column Name="school_id" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="project_id" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Association Name="students_students_attributes" Member="students_attributes" ThisKey="id" OtherKey="student_id" Type="students_attributes" />
+      <Association Name="projects_students" Member="projects" ThisKey="project_id" OtherKey="id" Type="projects" IsForeignKey="true" />
+      <Association Name="schools_students" Member="schools" ThisKey="school_id" OtherKey="id" Type="schools" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.students_attributes" Member="students_attributes">
+    <Type Name="students_attributes">
+      <Column Name="attr_id" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="student_id" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="attr_value" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Association Name="attributes_students_attributes" Member="attributes" ThisKey="attr_id" OtherKey="id" Type="attributes" IsForeignKey="true" />
+      <Association Name="students_students_attributes" Member="students" ThisKey="student_id" OtherKey="id" Type="students" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.users" Member="users">
+    <Type Name="users">
+      <Column Name="id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="fname" Type="System.String" DbType="VarChar(255) NOT NULL" CanBeNull="false" />
+      <Column Name="lname" Type="System.String" DbType="VarChar(255) NOT NULL" CanBeNull="false" />
+      <Column Name="email" Type="System.String" DbType="VarChar(255) NOT NULL" CanBeNull="false" />
+      <Column Name="pass" Type="System.String" DbType="VarChar(255) NOT NULL" CanBeNull="false" />
+      <Column Name="terminated" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="created_at" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Association Name="users_projects" Member="projects" ThisKey="id" OtherKey="project_admin" Type="projects" />
+      <Association Name="users_users_projects" Member="users_projects" ThisKey="id" OtherKey="user_id" Type="users_projects" />
+    </Type>
+  </Table>
+  <Table Name="dbo.users_projects" Member="users_projects">
+    <Type Name="users_projects">
+      <Column Name="user_id" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="project_id" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Association Name="projects_users_projects" Member="projects" ThisKey="project_id" OtherKey="id" Type="projects" IsForeignKey="true" />
+      <Association Name="users_users_projects" Member="users" ThisKey="user_id" OtherKey="id" Type="users" IsForeignKey="true" />
+    </Type>
+  </Table>
+</Database>

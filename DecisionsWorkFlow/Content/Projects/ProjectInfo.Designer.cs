@@ -44,7 +44,6 @@
             this.label1.TabIndex = 0;
             this.label1.Text = "Nome do Projeto";
             this.toolTip1.SetToolTip(this.label1, "Nome do Projeto\r\n");
-            this.label1.Click += new System.EventHandler(this.label1_Click);
             // 
             // label2
             // 
@@ -56,9 +55,8 @@
             this.label2.TabIndex = 1;
             this.label2.Text = "Titulo do Projeto";
             this.toolTip1.SetToolTip(this.label2, "Título do Projeto");
-            this.label2.Click += new System.EventHandler(this.label2_Click);
             // 
-            // UserControl1
+            // ProjectInfo
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -66,7 +64,7 @@
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.Name = "UserControl1";
+            this.Name = "ProjectInfo";
             this.Size = new System.Drawing.Size(306, 172);
             this.Load += new System.EventHandler(this.UserControl1_Load);
             this.ResumeLayout(false);

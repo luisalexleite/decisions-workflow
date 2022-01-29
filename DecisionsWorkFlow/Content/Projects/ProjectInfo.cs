@@ -8,6 +8,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using DecisionsWorkFlow.Content.Project;
 using System.Runtime.InteropServices;
 using System.Drawing.Drawing2D;
 
@@ -18,6 +19,8 @@ namespace DecisionsWorkFlow.Content.Projects
         private bool type;
         private string name;
         private string desc;
+        private int id;
+        private DecisionsWorkFlow.Projects projects;
 
         /// <summary>
         /// User Control must be round
@@ -39,18 +42,6 @@ namespace DecisionsWorkFlow.Content.Projects
         private static extern IntPtr CreateRoundRectRgn(int nLeftRect, int nTopRect,
             int nRightRect, int nBottomRect, int nWidthEllipse, int nHeightEllipse);
 
-        private GraphicsPath GetRoundRectagle(Rectangle bounds, int radius)
-        {
-            float r = radius;
-            GraphicsPath path = new GraphicsPath();
-            path.StartFigure();
-            path.AddArc(bounds.Left, bounds.Top, r, r, 180, 90);
-            path.AddArc(bounds.Right - r, bounds.Top, r, r, 270, 90);
-            path.AddArc(bounds.Right - r, bounds.Bottom - r, r, r, 0, 90);
-            path.AddArc(bounds.Left, bounds.Bottom - r, r, r, 90, 90);
-            path.CloseFigure();
-            return path;
-        }
         private void RecreateRegion()
         {
             var bounds = ClientRectangle;
@@ -68,24 +59,16 @@ namespace DecisionsWorkFlow.Content.Projects
             this.RecreateRegion();
         }
 
-        public ProjectInfo(bool _type, string _name, string _desc)
+        public ProjectInfo(bool _type, string _name, string _desc, int _id, DecisionsWorkFlow.Projects _projects)
         {
             type= _type;
             name= _name;
             desc = _desc;
+            id = _id;
+            projects = _projects;
             InitializeComponent();
             this.BorderStyle = BorderStyle.None;
             Region = System.Drawing.Region.FromHrgn(CreateRoundRectRgn(0, 0, Width, Height, 20, 20));
-        }
-
-        private void label2_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label1_Click(object sender, EventArgs e)
-        {
-
         }
 
         private void UserControl1_Load(object sender, EventArgs e)
@@ -107,9 +90,17 @@ namespace DecisionsWorkFlow.Content.Projects
             }
         }
 
+        private void OpenProjectWindow()
+        {
+            projects.Hide();
+            Project.Project project = new Project.Project(projects, id);
+            project.Size = projects.Size;
+            project.Show();
+        }
+
         private void UserControl1_Click(object sender, EventArgs e)
         {
-            MessageBox.Show(this.name);
+            OpenProjectWindow();
         }
     }
 }

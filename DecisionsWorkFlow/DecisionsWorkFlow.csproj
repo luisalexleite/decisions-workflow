@@ -114,6 +114,9 @@
     <Compile Include="Content\Project\Project.Designer.cs">
       <DependentUpon>Project.cs</DependentUpon>
     </Compile>
+    <Compile Include="Database\Database.cs">
+      <DependentUpon>Database.dbml</DependentUpon>
+    </Compile>
     <Compile Include="Database\Database.designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -121,7 +124,6 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Tests\Project.cs" />
     <EmbeddedResource Include="Content\Projects\Projects.resx">
       <DependentUpon>Projects.cs</DependentUpon>
     </EmbeddedResource>
@@ -205,6 +207,7 @@
   <ItemGroup>
     <Folder Include="Content\Project\Functions\" />
     <Folder Include="Content\Project\Students\" />
+    <Folder Include="Start\" />
   </ItemGroup>
   <ItemGroup>
     <BootstrapperPackage Include=".NETFramework,Version=v4.7.2">

@@ -96,6 +96,12 @@
     <Reference Include="WindowsFormsIntegration" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Content\Projects\AddProject.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Content\Projects\AddProject.Designer.cs">
+      <DependentUpon>AddProject.cs</DependentUpon>
+    </Compile>
     <Compile Include="Content\Projects\Projects.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -124,6 +130,9 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="Content\Projects\AddProject.resx">
+      <DependentUpon>AddProject.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Content\Projects\Projects.resx">
       <DependentUpon>Projects.cs</DependentUpon>
     </EmbeddedResource>

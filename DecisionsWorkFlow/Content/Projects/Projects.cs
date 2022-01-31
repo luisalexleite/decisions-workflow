@@ -115,16 +115,9 @@ namespace DecisionsWorkFlow
             }
         }
 
-        private void Reload()
-        {
-            Projects pr = new Projects(user);
-            pr.Show();
-            this.Hide();
-        }
-
         private void iconButton5_Click(object sender, EventArgs e)
         {
-            Reload();
+            LoadPanels();
         }
 
         private void kryptonTextBox1_Enter(object sender, EventArgs e)
@@ -195,7 +188,14 @@ namespace DecisionsWorkFlow
 
         public void OnOpen()
         {
-            Reload();
+            LoadPanels();
+        }
+
+        private void iconButton3_Click(object sender, EventArgs e)
+        {
+            AddProject addProject = new AddProject(user);
+            addProject.ShowDialog();
+            LoadPanels();
         }
     }
 }

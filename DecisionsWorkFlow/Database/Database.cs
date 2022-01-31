@@ -61,5 +61,14 @@ namespace DecisionsWorkFlow.Database
         {
             return database.schools.Where(s => s.id == school_id).FirstOrDefault();
         }
+
+        public bool CheckExistentProject(string project_name)
+        {
+            if (database.projects.Where(s => s.project_name.Equals(project_name)).Count() > 0)
+            {
+                return true;
+            }
+            return false;
+        }
     }
 }

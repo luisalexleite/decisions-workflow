@@ -41,12 +41,19 @@ namespace DecisionsWorkFlow.Content.Project
             label8.Text = database.GetProjectData(id).project_desc;
             label10.Text = database.CountStudents(id).ToString();
             toolTip1.SetToolTip(label8, label8.Text);
-            database.StudentsBySchool(id).ToList().ForEach(s =>
-                chart1.Series["Series1"].Points.AddXY(database.GetSchool(s.Key).school_abbr + " - " + s.Count().ToString(), s.Count())
-            );
-            database.StudentsByNationality(id).ToList().ForEach(s =>
-            chart2.Series["Series1"].Points.AddXY(new RegionInfo(s.Key).DisplayName + " - " + s.Count().ToString(), s.Count())
-            );
+            if (database.CountStudents(id) > 0) { 
+                database.StudentsBySchool(id).ToList().ForEach(s =>
+                    chart1.Series["Series1"].Points.AddXY(database.GetSchool(s.Key).school_abbr + " - " + s.Count().ToString(), s.Count())
+                );
+                database.StudentsByNationality(id).ToList().ForEach(s =>
+                chart2.Series["Series1"].Points.AddXY(new RegionInfo(s.Key).DisplayName + " - " + s.Count().ToString(), s.Count())
+                );
+            }
+            else
+            {
+                chart1.Titles.Add("Nenhum aluno registado.");
+                chart2.Titles.Add("Nenhum aluno registado.");
+            }
         }
 
         private void label6_Click(object sender, EventArgs e)

@@ -32,8 +32,22 @@ namespace DecisionsWorkFlow.Content.Project
             LoadContent();
         }
 
+        private void ClearControls()
+        {
+            chart1.Titles.Clear();
+            chart2.Titles.Clear();
+            chart1.Series.Clear();
+            chart2.Series.Clear();
+            chart1.Series.Add("Series1");
+            chart2.Series.Add("Series1");
+            chart1.Series["Series1"].ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Pie;
+            chart1.Series["Series1"].IsValueShownAsLabel = true;
+            chart2.Series["Series1"].ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Pie;
+            chart2.Series["Series1"].IsValueShownAsLabel = true;
+        }
         private void LoadContent()
         {
+            ClearControls();
             this.Text = "Decisions WorkFlow - Project ( " + database.GetProjectData(id).project_name + " )";
             label2.Text = database.GetProjectData(id).project_name;
             label4.Text = database.GetUserData(database.GetProjectData(id).project_admin).fname + " " + database.GetUserData(database.GetProjectData(id).project_admin).lname;
@@ -56,41 +70,29 @@ namespace DecisionsWorkFlow.Content.Project
             }
         }
 
-        private void label6_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label2_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label5_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label4_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label13_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void chart1_Click(object sender, EventArgs e)
-        {
-
-        }
-
         private void iconButton4_Click(object sender, EventArgs e)
         {
             DecisionsWorkFlow.Projects pr = new DecisionsWorkFlow.Projects(projects.user);
             pr.Show();
             this.Close();
+        }
+
+        private void iconButton2_Click(object sender, EventArgs e)
+        {
+            Students.Students st = new Students.Students(id, this);
+            st.Show();
+            this.Hide();
+        }
+
+        public void OnOpen()
+        {
+            LoadContent();
+            this.Show();
+        }
+
+        private void iconButton7_Click(object sender, EventArgs e)
+        {
+            LoadContent();
         }
     }
 }

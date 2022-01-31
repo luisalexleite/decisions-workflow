@@ -58,7 +58,7 @@ namespace DecisionsWorkFlow.Content.Projects
         private void LoadAttributes()
         {
             listBox1.Items.Clear();
-            attributeList.ToList().ForEach(a => listBox1.Items.Add(a.attr_name + "(" + a.attr_abbr + ")"));
+            attributeList.ToList().ForEach(a => listBox1.Items.Add(a.attr_name + " (" + a.attr_abbr + ")"));
         }
 
         private void iconButton2_Click(object sender, EventArgs e)

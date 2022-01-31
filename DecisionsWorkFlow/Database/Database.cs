@@ -42,6 +42,11 @@ namespace DecisionsWorkFlow.Database
             return database.projects.Where(p => p.id == project).FirstOrDefault();
         }
 
+        public IQueryable<students> GetStudents(int project)
+        {
+            return database.students.Where(s => s.project_id == project);
+        }
+
         public int CountStudents(int project)
         {
             return database.students.Where(s => s.project_id == project).Count();
@@ -69,6 +74,11 @@ namespace DecisionsWorkFlow.Database
                 return true;
             }
             return false;
+        }
+
+        public List<int?> GetStudentAtributes(int student)
+        {
+            return database.students_attributes.Where(sa => sa.student_id == student).Select(sa => sa.attr_value).ToList();
         }
     }
 }

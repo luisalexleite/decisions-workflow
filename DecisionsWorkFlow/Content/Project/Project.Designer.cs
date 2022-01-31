@@ -30,19 +30,14 @@
         {
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Project));
-            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea9 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
-            System.Windows.Forms.DataVisualization.Charting.Legend legend9 = new System.Windows.Forms.DataVisualization.Charting.Legend();
-            System.Windows.Forms.DataVisualization.Charting.Series series9 = new System.Windows.Forms.DataVisualization.Charting.Series();
-            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea10 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
-            System.Windows.Forms.DataVisualization.Charting.Legend legend10 = new System.Windows.Forms.DataVisualization.Charting.Legend();
-            System.Windows.Forms.DataVisualization.Charting.Series series10 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea11 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Legend legend11 = new System.Windows.Forms.DataVisualization.Charting.Legend();
+            System.Windows.Forms.DataVisualization.Charting.Series series11 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea12 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Legend legend12 = new System.Windows.Forms.DataVisualization.Charting.Legend();
+            System.Windows.Forms.DataVisualization.Charting.Series series12 = new System.Windows.Forms.DataVisualization.Charting.Series();
             this.kryptonPalette1 = new ComponentFactory.Krypton.Toolkit.KryptonPalette(this.components);
-            this.iconButton4 = new FontAwesome.Sharp.IconButton();
-            this.iconButton1 = new FontAwesome.Sharp.IconButton();
-            this.iconButton2 = new FontAwesome.Sharp.IconButton();
-            this.iconButton3 = new FontAwesome.Sharp.IconButton();
             this.label1 = new System.Windows.Forms.Label();
-            this.iconButton5 = new FontAwesome.Sharp.IconButton();
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
@@ -54,12 +49,17 @@
             this.kryptonGroup1 = new ComponentFactory.Krypton.Toolkit.KryptonGroup();
             this.label9 = new System.Windows.Forms.Label();
             this.label10 = new System.Windows.Forms.Label();
-            this.iconButton6 = new FontAwesome.Sharp.IconButton();
             this.label13 = new System.Windows.Forms.Label();
             this.label14 = new System.Windows.Forms.Label();
-            this.iconButton7 = new FontAwesome.Sharp.IconButton();
             this.chart2 = new System.Windows.Forms.DataVisualization.Charting.Chart();
             this.chart1 = new System.Windows.Forms.DataVisualization.Charting.Chart();
+            this.iconButton7 = new FontAwesome.Sharp.IconButton();
+            this.iconButton6 = new FontAwesome.Sharp.IconButton();
+            this.iconButton5 = new FontAwesome.Sharp.IconButton();
+            this.iconButton3 = new FontAwesome.Sharp.IconButton();
+            this.iconButton2 = new FontAwesome.Sharp.IconButton();
+            this.iconButton1 = new FontAwesome.Sharp.IconButton();
+            this.iconButton4 = new FontAwesome.Sharp.IconButton();
             ((System.ComponentModel.ISupportInitialize)(this.kryptonGroup1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.kryptonGroup1.Panel)).BeginInit();
             this.kryptonGroup1.Panel.SuspendLayout();
@@ -181,90 +181,10 @@
             this.kryptonPalette1.PanelStyles.PanelClient.StateCommon.Color1 = System.Drawing.SystemColors.ActiveCaptionText;
             this.kryptonPalette1.PanelStyles.PanelClient.StateCommon.Color2 = System.Drawing.SystemColors.ActiveCaptionText;
             // 
-            // iconButton4
-            // 
-            this.iconButton4.CausesValidation = false;
-            this.iconButton4.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.iconButton4.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.iconButton4.Font = new System.Drawing.Font("Microsoft YaHei UI", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.iconButton4.IconChar = FontAwesome.Sharp.IconChar.ArrowCircleLeft;
-            this.iconButton4.IconColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.iconButton4.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.iconButton4.IconSize = 62;
-            this.iconButton4.Location = new System.Drawing.Point(37, 12);
-            this.iconButton4.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.iconButton4.Name = "iconButton4";
-            this.iconButton4.Size = new System.Drawing.Size(187, 156);
-            this.iconButton4.TabIndex = 22;
-            this.iconButton4.TabStop = false;
-            this.iconButton4.Text = "Voltar a Trás";
-            this.iconButton4.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
-            this.iconButton4.UseVisualStyleBackColor = true;
-            this.iconButton4.Click += new System.EventHandler(this.iconButton4_Click);
-            // 
-            // iconButton1
-            // 
-            this.iconButton1.CausesValidation = false;
-            this.iconButton1.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.iconButton1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.iconButton1.Font = new System.Drawing.Font("Microsoft YaHei UI", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.iconButton1.IconChar = FontAwesome.Sharp.IconChar.WindowClose;
-            this.iconButton1.IconColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.iconButton1.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.iconButton1.IconSize = 62;
-            this.iconButton1.Location = new System.Drawing.Point(230, 12);
-            this.iconButton1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.iconButton1.Name = "iconButton1";
-            this.iconButton1.Size = new System.Drawing.Size(187, 156);
-            this.iconButton1.TabIndex = 23;
-            this.iconButton1.TabStop = false;
-            this.iconButton1.Text = "Terminar Projeto";
-            this.iconButton1.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
-            this.iconButton1.UseVisualStyleBackColor = true;
-            // 
-            // iconButton2
-            // 
-            this.iconButton2.CausesValidation = false;
-            this.iconButton2.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.iconButton2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.iconButton2.Font = new System.Drawing.Font("Microsoft YaHei UI", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.iconButton2.IconChar = FontAwesome.Sharp.IconChar.Users;
-            this.iconButton2.IconColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.iconButton2.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.iconButton2.IconSize = 62;
-            this.iconButton2.Location = new System.Drawing.Point(615, 11);
-            this.iconButton2.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.iconButton2.Name = "iconButton2";
-            this.iconButton2.Size = new System.Drawing.Size(187, 156);
-            this.iconButton2.TabIndex = 24;
-            this.iconButton2.TabStop = false;
-            this.iconButton2.Text = "Gestão de Alunos";
-            this.iconButton2.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
-            this.iconButton2.UseVisualStyleBackColor = true;
-            // 
-            // iconButton3
-            // 
-            this.iconButton3.CausesValidation = false;
-            this.iconButton3.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.iconButton3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.iconButton3.Font = new System.Drawing.Font("Microsoft YaHei UI", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.iconButton3.IconChar = FontAwesome.Sharp.IconChar.School;
-            this.iconButton3.IconColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.iconButton3.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.iconButton3.IconSize = 62;
-            this.iconButton3.Location = new System.Drawing.Point(808, 11);
-            this.iconButton3.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.iconButton3.Name = "iconButton3";
-            this.iconButton3.Size = new System.Drawing.Size(187, 156);
-            this.iconButton3.TabIndex = 25;
-            this.iconButton3.TabStop = false;
-            this.iconButton3.Text = "Gestão de Escolas";
-            this.iconButton3.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
-            this.iconButton3.UseVisualStyleBackColor = true;
-            // 
             // label1
             // 
             this.label1.AutoSize = true;
+            this.label1.BackColor = System.Drawing.Color.White;
             this.label1.Font = new System.Drawing.Font("Microsoft YaHei UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.Location = new System.Drawing.Point(19, 14);
             this.label1.Name = "label1";
@@ -272,39 +192,20 @@
             this.label1.TabIndex = 0;
             this.label1.Text = "Nome:";
             // 
-            // iconButton5
-            // 
-            this.iconButton5.CausesValidation = false;
-            this.iconButton5.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.iconButton5.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.iconButton5.Font = new System.Drawing.Font("Microsoft YaHei UI", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.iconButton5.IconChar = FontAwesome.Sharp.IconChar.Toolbox;
-            this.iconButton5.IconColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.iconButton5.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.iconButton5.IconSize = 62;
-            this.iconButton5.Location = new System.Drawing.Point(1001, 11);
-            this.iconButton5.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.iconButton5.Name = "iconButton5";
-            this.iconButton5.Size = new System.Drawing.Size(187, 156);
-            this.iconButton5.TabIndex = 27;
-            this.iconButton5.TabStop = false;
-            this.iconButton5.Text = "Gestão de Funções";
-            this.iconButton5.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
-            this.iconButton5.UseVisualStyleBackColor = true;
-            // 
             // label2
             // 
+            this.label2.BackColor = System.Drawing.Color.White;
             this.label2.Font = new System.Drawing.Font("Microsoft YaHei UI Light", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.Location = new System.Drawing.Point(131, 14);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(439, 41);
             this.label2.TabIndex = 1;
             this.label2.Text = "Nome do Projeto";
-            this.label2.Click += new System.EventHandler(this.label2_Click);
             // 
             // label3
             // 
             this.label3.AutoSize = true;
+            this.label3.BackColor = System.Drawing.Color.White;
             this.label3.Font = new System.Drawing.Font("Microsoft YaHei UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label3.Location = new System.Drawing.Point(662, 14);
             this.label3.Name = "label3";
@@ -314,38 +215,39 @@
             // 
             // label4
             // 
+            this.label4.BackColor = System.Drawing.Color.White;
             this.label4.Font = new System.Drawing.Font("Microsoft YaHei UI Light", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label4.Location = new System.Drawing.Point(781, 14);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(503, 41);
             this.label4.TabIndex = 3;
             this.label4.Text = "John Doe";
-            this.label4.Click += new System.EventHandler(this.label4_Click);
             // 
             // label5
             // 
             this.label5.AutoSize = true;
+            this.label5.BackColor = System.Drawing.Color.White;
             this.label5.Font = new System.Drawing.Font("Microsoft YaHei UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label5.Location = new System.Drawing.Point(1170, 14);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(177, 27);
             this.label5.TabIndex = 4;
             this.label5.Text = "Data de Criação:";
-            this.label5.Click += new System.EventHandler(this.label5_Click);
             // 
             // label6
             // 
+            this.label6.BackColor = System.Drawing.Color.White;
             this.label6.Font = new System.Drawing.Font("Microsoft YaHei UI Light", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label6.Location = new System.Drawing.Point(1412, 14);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(188, 27);
             this.label6.TabIndex = 5;
             this.label6.Text = "10/12/2020";
-            this.label6.Click += new System.EventHandler(this.label6_Click);
             // 
             // label7
             // 
             this.label7.AutoSize = true;
+            this.label7.BackColor = System.Drawing.Color.White;
             this.label7.Font = new System.Drawing.Font("Microsoft YaHei UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label7.Location = new System.Drawing.Point(746, 60);
             this.label7.Name = "label7";
@@ -355,6 +257,7 @@
             // 
             // label8
             // 
+            this.label8.BackColor = System.Drawing.Color.White;
             this.label8.Font = new System.Drawing.Font("Microsoft YaHei UI Light", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label8.Location = new System.Drawing.Point(19, 101);
             this.label8.Name = "label8";
@@ -381,7 +284,13 @@
             this.kryptonGroup1.Panel.Controls.Add(this.label3);
             this.kryptonGroup1.Panel.Controls.Add(this.label4);
             this.kryptonGroup1.Size = new System.Drawing.Size(1663, 203);
-            this.kryptonGroup1.StateCommon.Back.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(250)))), ((int)(((byte)(252)))), ((int)(((byte)(252)))));
+            this.kryptonGroup1.StateCommon.Back.Color1 = System.Drawing.Color.White;
+            this.kryptonGroup1.StateCommon.Border.Color1 = System.Drawing.SystemColors.ActiveCaptionText;
+            this.kryptonGroup1.StateCommon.Border.Color2 = System.Drawing.SystemColors.ActiveCaptionText;
+            this.kryptonGroup1.StateCommon.Border.DrawBorders = ((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders)((((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Top | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Bottom) 
+            | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Left) 
+            | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Right)));
+            this.kryptonGroup1.StateCommon.Border.Width = 1;
             this.kryptonGroup1.TabIndex = 28;
             // 
             // label9
@@ -404,26 +313,6 @@
             this.label10.Text = "25";
             this.label10.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // iconButton6
-            // 
-            this.iconButton6.CausesValidation = false;
-            this.iconButton6.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.iconButton6.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.iconButton6.Font = new System.Drawing.Font("Microsoft YaHei UI", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.iconButton6.IconChar = FontAwesome.Sharp.IconChar.UserLock;
-            this.iconButton6.IconColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.iconButton6.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.iconButton6.IconSize = 62;
-            this.iconButton6.Location = new System.Drawing.Point(1513, 11);
-            this.iconButton6.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.iconButton6.Name = "iconButton6";
-            this.iconButton6.Size = new System.Drawing.Size(187, 156);
-            this.iconButton6.TabIndex = 33;
-            this.iconButton6.TabStop = false;
-            this.iconButton6.Text = "Gestão de Permissões";
-            this.iconButton6.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
-            this.iconButton6.UseVisualStyleBackColor = true;
-            // 
             // label13
             // 
             this.label13.Font = new System.Drawing.Font("Microsoft YaHei UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -433,7 +322,6 @@
             this.label13.TabIndex = 34;
             this.label13.Text = "Distribuição por Escola";
             this.label13.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.label13.Click += new System.EventHandler(this.label13_Click);
             // 
             // label14
             // 
@@ -444,6 +332,53 @@
             this.label14.TabIndex = 35;
             this.label14.Text = "Distribuição por Nacionalidade";
             this.label14.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // chart2
+            // 
+            this.chart2.BackColor = System.Drawing.Color.Transparent;
+            chartArea11.BackColor = System.Drawing.Color.Transparent;
+            chartArea11.Name = "ChartArea1";
+            this.chart2.ChartAreas.Add(chartArea11);
+            legend11.BackColor = System.Drawing.Color.Transparent;
+            legend11.Name = "Legend1";
+            this.chart2.Legends.Add(legend11);
+            this.chart2.Location = new System.Drawing.Point(567, 449);
+            this.chart2.Name = "chart2";
+            this.chart2.Palette = System.Windows.Forms.DataVisualization.Charting.ChartColorPalette.Excel;
+            series11.BorderColor = System.Drawing.Color.Transparent;
+            series11.ChartArea = "ChartArea1";
+            series11.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Pie;
+            series11.IsValueShownAsLabel = true;
+            series11.Legend = "Legend1";
+            series11.Name = "Series1";
+            this.chart2.Series.Add(series11);
+            this.chart2.Size = new System.Drawing.Size(579, 379);
+            this.chart2.TabIndex = 43;
+            this.chart2.Text = "chart2";
+            // 
+            // chart1
+            // 
+            this.chart1.BackColor = System.Drawing.Color.Transparent;
+            this.chart1.BorderlineColor = System.Drawing.Color.Transparent;
+            chartArea12.BackColor = System.Drawing.Color.Transparent;
+            chartArea12.Name = "ChartArea1";
+            this.chart1.ChartAreas.Add(chartArea12);
+            legend12.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(250)))), ((int)(((byte)(252)))), ((int)(((byte)(252)))));
+            legend12.Name = "Legend1";
+            this.chart1.Legends.Add(legend12);
+            this.chart1.Location = new System.Drawing.Point(1107, 449);
+            this.chart1.Name = "chart1";
+            this.chart1.Palette = System.Windows.Forms.DataVisualization.Charting.ChartColorPalette.Excel;
+            series12.BorderColor = System.Drawing.Color.Transparent;
+            series12.ChartArea = "ChartArea1";
+            series12.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Pie;
+            series12.IsValueShownAsLabel = true;
+            series12.Legend = "Legend1";
+            series12.Name = "Series1";
+            this.chart1.Series.Add(series12);
+            this.chart1.Size = new System.Drawing.Size(514, 373);
+            this.chart1.TabIndex = 44;
+            this.chart1.Text = "chart1";
             // 
             // iconButton7
             // 
@@ -464,53 +399,129 @@
             this.iconButton7.Text = "Atualizar";
             this.iconButton7.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.iconButton7.UseVisualStyleBackColor = true;
+            this.iconButton7.Click += new System.EventHandler(this.iconButton7_Click);
             // 
-            // chart2
+            // iconButton6
             // 
-            this.chart2.BackColor = System.Drawing.Color.Transparent;
-            chartArea9.BackColor = System.Drawing.Color.Transparent;
-            chartArea9.Name = "ChartArea1";
-            this.chart2.ChartAreas.Add(chartArea9);
-            legend9.BackColor = System.Drawing.Color.Transparent;
-            legend9.Name = "Legend1";
-            this.chart2.Legends.Add(legend9);
-            this.chart2.Location = new System.Drawing.Point(567, 449);
-            this.chart2.Name = "chart2";
-            this.chart2.Palette = System.Windows.Forms.DataVisualization.Charting.ChartColorPalette.Excel;
-            series9.BorderColor = System.Drawing.Color.Transparent;
-            series9.ChartArea = "ChartArea1";
-            series9.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Pie;
-            series9.IsValueShownAsLabel = true;
-            series9.Legend = "Legend1";
-            series9.Name = "Series1";
-            this.chart2.Series.Add(series9);
-            this.chart2.Size = new System.Drawing.Size(579, 379);
-            this.chart2.TabIndex = 43;
-            this.chart2.Text = "chart2";
+            this.iconButton6.CausesValidation = false;
+            this.iconButton6.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.iconButton6.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.iconButton6.Font = new System.Drawing.Font("Microsoft YaHei UI", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.iconButton6.IconChar = FontAwesome.Sharp.IconChar.UserLock;
+            this.iconButton6.IconColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.iconButton6.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.iconButton6.IconSize = 62;
+            this.iconButton6.Location = new System.Drawing.Point(1513, 11);
+            this.iconButton6.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.iconButton6.Name = "iconButton6";
+            this.iconButton6.Size = new System.Drawing.Size(187, 156);
+            this.iconButton6.TabIndex = 33;
+            this.iconButton6.TabStop = false;
+            this.iconButton6.Text = "Gestão de Permissões";
+            this.iconButton6.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.iconButton6.UseVisualStyleBackColor = true;
             // 
-            // chart1
+            // iconButton5
             // 
-            this.chart1.BackColor = System.Drawing.Color.Transparent;
-            this.chart1.BorderlineColor = System.Drawing.Color.Transparent;
-            chartArea10.BackColor = System.Drawing.Color.Transparent;
-            chartArea10.Name = "ChartArea1";
-            this.chart1.ChartAreas.Add(chartArea10);
-            legend10.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(250)))), ((int)(((byte)(252)))), ((int)(((byte)(252)))));
-            legend10.Name = "Legend1";
-            this.chart1.Legends.Add(legend10);
-            this.chart1.Location = new System.Drawing.Point(1107, 449);
-            this.chart1.Name = "chart1";
-            this.chart1.Palette = System.Windows.Forms.DataVisualization.Charting.ChartColorPalette.Excel;
-            series10.BorderColor = System.Drawing.Color.Transparent;
-            series10.ChartArea = "ChartArea1";
-            series10.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Pie;
-            series10.IsValueShownAsLabel = true;
-            series10.Legend = "Legend1";
-            series10.Name = "Series1";
-            this.chart1.Series.Add(series10);
-            this.chart1.Size = new System.Drawing.Size(514, 373);
-            this.chart1.TabIndex = 44;
-            this.chart1.Text = "chart1";
+            this.iconButton5.CausesValidation = false;
+            this.iconButton5.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.iconButton5.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.iconButton5.Font = new System.Drawing.Font("Microsoft YaHei UI", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.iconButton5.IconChar = FontAwesome.Sharp.IconChar.Toolbox;
+            this.iconButton5.IconColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.iconButton5.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.iconButton5.IconSize = 62;
+            this.iconButton5.Location = new System.Drawing.Point(1001, 11);
+            this.iconButton5.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.iconButton5.Name = "iconButton5";
+            this.iconButton5.Size = new System.Drawing.Size(187, 156);
+            this.iconButton5.TabIndex = 27;
+            this.iconButton5.TabStop = false;
+            this.iconButton5.Text = "Gestão de Funções";
+            this.iconButton5.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.iconButton5.UseVisualStyleBackColor = true;
+            // 
+            // iconButton3
+            // 
+            this.iconButton3.CausesValidation = false;
+            this.iconButton3.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.iconButton3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.iconButton3.Font = new System.Drawing.Font("Microsoft YaHei UI", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.iconButton3.IconChar = FontAwesome.Sharp.IconChar.School;
+            this.iconButton3.IconColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.iconButton3.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.iconButton3.IconSize = 62;
+            this.iconButton3.Location = new System.Drawing.Point(808, 11);
+            this.iconButton3.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.iconButton3.Name = "iconButton3";
+            this.iconButton3.Size = new System.Drawing.Size(187, 156);
+            this.iconButton3.TabIndex = 25;
+            this.iconButton3.TabStop = false;
+            this.iconButton3.Text = "Gestão de Escolas";
+            this.iconButton3.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.iconButton3.UseVisualStyleBackColor = true;
+            // 
+            // iconButton2
+            // 
+            this.iconButton2.CausesValidation = false;
+            this.iconButton2.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.iconButton2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.iconButton2.Font = new System.Drawing.Font("Microsoft YaHei UI", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.iconButton2.IconChar = FontAwesome.Sharp.IconChar.Users;
+            this.iconButton2.IconColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.iconButton2.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.iconButton2.IconSize = 62;
+            this.iconButton2.Location = new System.Drawing.Point(615, 11);
+            this.iconButton2.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.iconButton2.Name = "iconButton2";
+            this.iconButton2.Size = new System.Drawing.Size(187, 156);
+            this.iconButton2.TabIndex = 24;
+            this.iconButton2.TabStop = false;
+            this.iconButton2.Text = "Gestão de Alunos";
+            this.iconButton2.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.iconButton2.UseVisualStyleBackColor = true;
+            this.iconButton2.Click += new System.EventHandler(this.iconButton2_Click);
+            // 
+            // iconButton1
+            // 
+            this.iconButton1.CausesValidation = false;
+            this.iconButton1.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.iconButton1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.iconButton1.Font = new System.Drawing.Font("Microsoft YaHei UI", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.iconButton1.IconChar = FontAwesome.Sharp.IconChar.WindowClose;
+            this.iconButton1.IconColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.iconButton1.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.iconButton1.IconSize = 62;
+            this.iconButton1.Location = new System.Drawing.Point(230, 12);
+            this.iconButton1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.iconButton1.Name = "iconButton1";
+            this.iconButton1.Size = new System.Drawing.Size(187, 156);
+            this.iconButton1.TabIndex = 23;
+            this.iconButton1.TabStop = false;
+            this.iconButton1.Text = "Terminar Projeto";
+            this.iconButton1.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.iconButton1.UseVisualStyleBackColor = true;
+            // 
+            // iconButton4
+            // 
+            this.iconButton4.CausesValidation = false;
+            this.iconButton4.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.iconButton4.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.iconButton4.Font = new System.Drawing.Font("Microsoft YaHei UI", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.iconButton4.IconChar = FontAwesome.Sharp.IconChar.ArrowCircleLeft;
+            this.iconButton4.IconColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.iconButton4.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.iconButton4.IconSize = 62;
+            this.iconButton4.Location = new System.Drawing.Point(37, 12);
+            this.iconButton4.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.iconButton4.Name = "iconButton4";
+            this.iconButton4.Size = new System.Drawing.Size(187, 156);
+            this.iconButton4.TabIndex = 22;
+            this.iconButton4.TabStop = false;
+            this.iconButton4.Text = "Voltar a Trás";
+            this.iconButton4.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.iconButton4.UseVisualStyleBackColor = true;
+            this.iconButton4.Click += new System.EventHandler(this.iconButton4_Click);
             // 
             // Project
             // 
@@ -536,6 +547,7 @@
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.MaximizeBox = false;
             this.Name = "Project";
             this.Palette = this.kryptonPalette1;
             this.PaletteMode = ComponentFactory.Krypton.Toolkit.PaletteMode.Custom;

@@ -1,4 +1,5 @@
-﻿using System;
+﻿using DecisionsWorkFlow.Start;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
@@ -16,7 +17,7 @@ namespace DecisionsWorkFlow
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new Projects(1));
+            Application.Run(new Loading());
         }
     }
 }

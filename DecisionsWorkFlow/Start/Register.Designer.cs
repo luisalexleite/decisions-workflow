@@ -1,6 +1,6 @@
-﻿namespace DecisionsWorkFlow.Content.Project.Functions
+﻿namespace DecisionsWorkFlow.Start
 {
-    partial class Function
+    partial class Register
     {
         /// <summary>
         /// Required designer variable.
@@ -29,26 +29,22 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Function));
             this.kryptonPalette1 = new ComponentFactory.Krypton.Toolkit.KryptonPalette(this.components);
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.name = new System.Windows.Forms.DataGridViewLinkColumn();
-            this.school = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.schoolNumber = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.nationality = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dwfPoints = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.saatyIndex = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.iconButton4 = new FontAwesome.Sharp.IconButton();
-            this.iconButton7 = new FontAwesome.Sharp.IconButton();
             this.iconButton1 = new FontAwesome.Sharp.IconButton();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
-            this.label4 = new System.Windows.Forms.Label();
-            this.kryptonTextBox1 = new ComponentFactory.Krypton.Toolkit.KryptonTextBox();
-            this.label1 = new System.Windows.Forms.Label();
-            this.comboBox2 = new System.Windows.Forms.ComboBox();
-            this.comboBox3 = new System.Windows.Forms.ComboBox();
+            this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            this.label1 = new System.Windows.Forms.Label();
+            this.kryptonTextBox2 = new ComponentFactory.Krypton.Toolkit.KryptonTextBox();
+            this.kryptonTextBox1 = new ComponentFactory.Krypton.Toolkit.KryptonTextBox();
+            this.iconButton2 = new FontAwesome.Sharp.IconButton();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.kryptonTextBox3 = new ComponentFactory.Krypton.Toolkit.KryptonTextBox();
+            this.label4 = new System.Windows.Forms.Label();
+            this.kryptonTextBox4 = new ComponentFactory.Krypton.Toolkit.KryptonTextBox();
+            this.kryptonTextBox5 = new ComponentFactory.Krypton.Toolkit.KryptonTextBox();
+            this.label5 = new System.Windows.Forms.Label();
+            this.label6 = new System.Windows.Forms.Label();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // kryptonPalette1
@@ -164,160 +160,91 @@
             this.kryptonPalette1.PanelStyles.PanelClient.StateCommon.Color1 = System.Drawing.SystemColors.ActiveCaptionText;
             this.kryptonPalette1.PanelStyles.PanelClient.StateCommon.Color2 = System.Drawing.SystemColors.ActiveCaptionText;
             // 
-            // dataGridView1
-            // 
-            this.dataGridView1.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
-            this.dataGridView1.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(250)))), ((int)(((byte)(252)))), ((int)(((byte)(252)))));
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.name,
-            this.school,
-            this.schoolNumber,
-            this.nationality,
-            this.dwfPoints,
-            this.saatyIndex});
-            this.dataGridView1.Location = new System.Drawing.Point(24, 301);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.ReadOnly = true;
-            this.dataGridView1.RowHeadersWidth = 51;
-            this.dataGridView1.RowTemplate.Height = 24;
-            this.dataGridView1.Size = new System.Drawing.Size(1690, 515);
-            this.dataGridView1.TabIndex = 0;
-            // 
-            // name
-            // 
-            this.name.HeaderText = "Nome";
-            this.name.MinimumWidth = 6;
-            this.name.Name = "name";
-            this.name.ReadOnly = true;
-            // 
-            // school
-            // 
-            this.school.HeaderText = "Instituição de Ensino";
-            this.school.MinimumWidth = 6;
-            this.school.Name = "school";
-            this.school.ReadOnly = true;
-            // 
-            // schoolNumber
-            // 
-            this.schoolNumber.HeaderText = "Nº de Identificação do Aluno";
-            this.schoolNumber.MinimumWidth = 6;
-            this.schoolNumber.Name = "schoolNumber";
-            this.schoolNumber.ReadOnly = true;
-            // 
-            // nationality
-            // 
-            this.nationality.HeaderText = "Nacionalidade";
-            this.nationality.MinimumWidth = 6;
-            this.nationality.Name = "nationality";
-            this.nationality.ReadOnly = true;
-            // 
-            // dwfPoints
-            // 
-            this.dwfPoints.HeaderText = "Pontos DWF";
-            this.dwfPoints.MinimumWidth = 6;
-            this.dwfPoints.Name = "dwfPoints";
-            this.dwfPoints.ReadOnly = true;
-            // 
-            // saatyIndex
-            // 
-            this.saatyIndex.HeaderText = "Índice Saaty";
-            this.saatyIndex.MinimumWidth = 6;
-            this.saatyIndex.Name = "saatyIndex";
-            this.saatyIndex.ReadOnly = true;
-            // 
-            // iconButton4
-            // 
-            this.iconButton4.CausesValidation = false;
-            this.iconButton4.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.iconButton4.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.iconButton4.Font = new System.Drawing.Font("Microsoft YaHei UI", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.iconButton4.IconChar = FontAwesome.Sharp.IconChar.ArrowCircleLeft;
-            this.iconButton4.IconColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.iconButton4.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.iconButton4.IconSize = 62;
-            this.iconButton4.Location = new System.Drawing.Point(24, 21);
-            this.iconButton4.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.iconButton4.Name = "iconButton4";
-            this.iconButton4.Size = new System.Drawing.Size(187, 156);
-            this.iconButton4.TabIndex = 25;
-            this.iconButton4.TabStop = false;
-            this.iconButton4.Text = "Voltar a Trás";
-            this.iconButton4.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
-            this.iconButton4.UseVisualStyleBackColor = true;
-            // 
-            // iconButton7
-            // 
-            this.iconButton7.CausesValidation = false;
-            this.iconButton7.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.iconButton7.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.iconButton7.Font = new System.Drawing.Font("Microsoft YaHei UI", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.iconButton7.IconChar = FontAwesome.Sharp.IconChar.Sync;
-            this.iconButton7.IconColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.iconButton7.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.iconButton7.IconSize = 62;
-            this.iconButton7.Location = new System.Drawing.Point(217, 21);
-            this.iconButton7.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.iconButton7.Name = "iconButton7";
-            this.iconButton7.Size = new System.Drawing.Size(187, 156);
-            this.iconButton7.TabIndex = 39;
-            this.iconButton7.TabStop = false;
-            this.iconButton7.Text = "Atualizar";
-            this.iconButton7.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
-            this.iconButton7.UseVisualStyleBackColor = true;
-            // 
             // iconButton1
             // 
-            this.iconButton1.CausesValidation = false;
             this.iconButton1.Cursor = System.Windows.Forms.Cursors.Hand;
             this.iconButton1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.iconButton1.Font = new System.Drawing.Font("Microsoft YaHei UI", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.iconButton1.IconChar = FontAwesome.Sharp.IconChar.Calculator;
-            this.iconButton1.IconColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.iconButton1.IconChar = FontAwesome.Sharp.IconChar.None;
+            this.iconButton1.IconColor = System.Drawing.Color.Black;
             this.iconButton1.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.iconButton1.IconSize = 62;
-            this.iconButton1.Location = new System.Drawing.Point(1522, 21);
-            this.iconButton1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.iconButton1.Location = new System.Drawing.Point(361, 722);
             this.iconButton1.Name = "iconButton1";
-            this.iconButton1.Size = new System.Drawing.Size(187, 156);
-            this.iconButton1.TabIndex = 40;
+            this.iconButton1.Size = new System.Drawing.Size(97, 50);
+            this.iconButton1.TabIndex = 57;
             this.iconButton1.TabStop = false;
-            this.iconButton1.Text = "Recalcular";
-            this.iconButton1.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.iconButton1.Text = "Registo";
             this.iconButton1.UseVisualStyleBackColor = true;
+            this.iconButton1.Click += new System.EventHandler(this.iconButton1_Click);
             // 
-            // comboBox1
+            // label3
             // 
-            this.comboBox1.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.comboBox1.Font = new System.Drawing.Font("Microsoft JhengHei UI", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.comboBox1.Items.AddRange(new object[] {
-            "Índice Saaty",
-            "Pontos DWF",
-            "Nome (Asc.)",
-            "Nome (Desc.)"});
-            this.comboBox1.Location = new System.Drawing.Point(1021, 207);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(147, 30);
-            this.comboBox1.TabIndex = 44;
-            this.comboBox1.Tag = "";
+            this.label3.AutoSize = true;
+            this.label3.Font = new System.Drawing.Font("Microsoft YaHei UI", 22.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.Location = new System.Drawing.Point(150, 182);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(163, 50);
+            this.label3.TabIndex = 55;
+            this.label3.Text = "Registo";
             // 
-            // label4
+            // label2
             // 
-            this.label4.AutoSize = true;
-            this.label4.Font = new System.Drawing.Font("Microsoft JhengHei UI", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(859, 210);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(117, 22);
-            this.label4.TabIndex = 43;
-            this.label4.Text = "Ordenar por:";
+            this.label2.AutoSize = true;
+            this.label2.BackColor = System.Drawing.Color.Transparent;
+            this.label2.Font = new System.Drawing.Font("Microsoft YaHei UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.Location = new System.Drawing.Point(52, 345);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(96, 27);
+            this.label2.TabIndex = 54;
+            this.label2.Text = "Apelido:";
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.BackColor = System.Drawing.Color.Transparent;
+            this.label1.Font = new System.Drawing.Font("Microsoft YaHei UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(52, 263);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(80, 27);
+            this.label1.TabIndex = 53;
+            this.label1.Text = "Nome:";
+            // 
+            // kryptonTextBox2
+            // 
+            this.kryptonTextBox2.AlwaysActive = false;
+            this.kryptonTextBox2.CausesValidation = false;
+            this.kryptonTextBox2.Location = new System.Drawing.Point(54, 375);
+            this.kryptonTextBox2.Name = "kryptonTextBox2";
+            this.kryptonTextBox2.Size = new System.Drawing.Size(404, 37);
+            this.kryptonTextBox2.StateActive.Back.Color1 = System.Drawing.Color.White;
+            this.kryptonTextBox2.StateActive.Border.Color1 = System.Drawing.SystemColors.ActiveCaptionText;
+            this.kryptonTextBox2.StateActive.Border.Color2 = System.Drawing.SystemColors.ActiveCaptionText;
+            this.kryptonTextBox2.StateActive.Border.DrawBorders = ((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders)((((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Top | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Bottom) 
+            | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Left) 
+            | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Right)));
+            this.kryptonTextBox2.StateActive.Content.Color1 = System.Drawing.SystemColors.ActiveCaptionText;
+            this.kryptonTextBox2.StateActive.Content.Padding = new System.Windows.Forms.Padding(10, 0, 10, 0);
+            this.kryptonTextBox2.StateCommon.Back.Color1 = System.Drawing.Color.White;
+            this.kryptonTextBox2.StateCommon.Border.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(244)))), ((int)(((byte)(244)))), ((int)(((byte)(244)))));
+            this.kryptonTextBox2.StateCommon.Border.Color2 = System.Drawing.Color.FromArgb(((int)(((byte)(244)))), ((int)(((byte)(244)))), ((int)(((byte)(244)))));
+            this.kryptonTextBox2.StateCommon.Border.DrawBorders = ((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders)((((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Top | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Bottom) 
+            | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Left) 
+            | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Right)));
+            this.kryptonTextBox2.StateCommon.Border.GraphicsHint = ComponentFactory.Krypton.Toolkit.PaletteGraphicsHint.AntiAlias;
+            this.kryptonTextBox2.StateCommon.Border.Rounding = 20;
+            this.kryptonTextBox2.StateCommon.Border.Width = 1;
+            this.kryptonTextBox2.StateCommon.Content.Color1 = System.Drawing.SystemColors.ActiveBorder;
+            this.kryptonTextBox2.StateCommon.Content.Font = new System.Drawing.Font("Microsoft YaHei UI", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.kryptonTextBox2.StateCommon.Content.Padding = new System.Windows.Forms.Padding(10, 0, 10, 0);
+            this.kryptonTextBox2.TabIndex = 52;
+            this.kryptonTextBox2.TabStop = false;
             // 
             // kryptonTextBox1
             // 
             this.kryptonTextBox1.AlwaysActive = false;
             this.kryptonTextBox1.CausesValidation = false;
-            this.kryptonTextBox1.Location = new System.Drawing.Point(24, 200);
+            this.kryptonTextBox1.Location = new System.Drawing.Point(54, 293);
             this.kryptonTextBox1.Name = "kryptonTextBox1";
-            this.kryptonTextBox1.Size = new System.Drawing.Size(829, 38);
+            this.kryptonTextBox1.Size = new System.Drawing.Size(404, 37);
             this.kryptonTextBox1.StateActive.Back.Color1 = System.Drawing.Color.White;
             this.kryptonTextBox1.StateActive.Border.Color1 = System.Drawing.SystemColors.ActiveCaptionText;
             this.kryptonTextBox1.StateActive.Border.Color2 = System.Drawing.SystemColors.ActiveCaptionText;
@@ -338,110 +265,210 @@
             this.kryptonTextBox1.StateCommon.Content.Color1 = System.Drawing.SystemColors.ActiveBorder;
             this.kryptonTextBox1.StateCommon.Content.Font = new System.Drawing.Font("Microsoft YaHei UI", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.kryptonTextBox1.StateCommon.Content.Padding = new System.Windows.Forms.Padding(10, 0, 10, 0);
-            this.kryptonTextBox1.TabIndex = 42;
+            this.kryptonTextBox1.TabIndex = 51;
             this.kryptonTextBox1.TabStop = false;
-            this.kryptonTextBox1.Text = "Escreva uma palavra ou expressão que descreva a função (Ex: Gestor)";
             // 
-            // label1
+            // iconButton2
             // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Microsoft JhengHei UI", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(20, 264);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(180, 22);
-            this.label1.TabIndex = 45;
-            this.label1.Text = "Insituição de Ensino:";
+            this.iconButton2.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.iconButton2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.iconButton2.IconChar = FontAwesome.Sharp.IconChar.None;
+            this.iconButton2.IconColor = System.Drawing.Color.Black;
+            this.iconButton2.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.iconButton2.Location = new System.Drawing.Point(222, 722);
+            this.iconButton2.Name = "iconButton2";
+            this.iconButton2.Size = new System.Drawing.Size(133, 50);
+            this.iconButton2.TabIndex = 58;
+            this.iconButton2.TabStop = false;
+            this.iconButton2.Text = "Cancelar";
+            this.iconButton2.UseVisualStyleBackColor = true;
+            this.iconButton2.Click += new System.EventHandler(this.iconButton2_Click);
             // 
-            // comboBox2
+            // pictureBox1
             // 
-            this.comboBox2.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.comboBox2.Font = new System.Drawing.Font("Microsoft JhengHei UI", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.comboBox2.Items.AddRange(new object[] {
-            "Índice Saaty",
-            "Pontos DWF",
-            "Nome (Asc.)",
-            "Nome (Desc.)"});
-            this.comboBox2.Location = new System.Drawing.Point(228, 256);
-            this.comboBox2.Name = "comboBox2";
-            this.comboBox2.Size = new System.Drawing.Size(352, 30);
-            this.comboBox2.TabIndex = 46;
-            this.comboBox2.Tag = "";
+            this.pictureBox1.Image = global::DecisionsWorkFlow.Properties.Resources.logo_big_black_slogan;
+            this.pictureBox1.Location = new System.Drawing.Point(77, 10);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(381, 169);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox1.TabIndex = 59;
+            this.pictureBox1.TabStop = false;
             // 
-            // comboBox3
+            // kryptonTextBox3
             // 
-            this.comboBox3.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.comboBox3.Font = new System.Drawing.Font("Microsoft JhengHei UI", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.comboBox3.Items.AddRange(new object[] {
-            "Índice Saaty",
-            "Pontos DWF",
-            "Nome (Asc.)",
-            "Nome (Desc.)"});
-            this.comboBox3.Location = new System.Drawing.Point(775, 256);
-            this.comboBox3.Name = "comboBox3";
-            this.comboBox3.Size = new System.Drawing.Size(370, 30);
-            this.comboBox3.TabIndex = 48;
-            this.comboBox3.Tag = "";
-            this.comboBox3.SelectedIndexChanged += new System.EventHandler(this.comboBox3_SelectedIndexChanged);
+            this.kryptonTextBox3.AlwaysActive = false;
+            this.kryptonTextBox3.CausesValidation = false;
+            this.kryptonTextBox3.Location = new System.Drawing.Point(54, 460);
+            this.kryptonTextBox3.Name = "kryptonTextBox3";
+            this.kryptonTextBox3.Size = new System.Drawing.Size(404, 37);
+            this.kryptonTextBox3.StateActive.Back.Color1 = System.Drawing.Color.White;
+            this.kryptonTextBox3.StateActive.Border.Color1 = System.Drawing.SystemColors.ActiveCaptionText;
+            this.kryptonTextBox3.StateActive.Border.Color2 = System.Drawing.SystemColors.ActiveCaptionText;
+            this.kryptonTextBox3.StateActive.Border.DrawBorders = ((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders)((((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Top | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Bottom) 
+            | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Left) 
+            | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Right)));
+            this.kryptonTextBox3.StateActive.Content.Color1 = System.Drawing.SystemColors.ActiveCaptionText;
+            this.kryptonTextBox3.StateActive.Content.Padding = new System.Windows.Forms.Padding(10, 0, 10, 0);
+            this.kryptonTextBox3.StateCommon.Back.Color1 = System.Drawing.Color.White;
+            this.kryptonTextBox3.StateCommon.Border.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(244)))), ((int)(((byte)(244)))), ((int)(((byte)(244)))));
+            this.kryptonTextBox3.StateCommon.Border.Color2 = System.Drawing.Color.FromArgb(((int)(((byte)(244)))), ((int)(((byte)(244)))), ((int)(((byte)(244)))));
+            this.kryptonTextBox3.StateCommon.Border.DrawBorders = ((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders)((((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Top | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Bottom) 
+            | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Left) 
+            | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Right)));
+            this.kryptonTextBox3.StateCommon.Border.GraphicsHint = ComponentFactory.Krypton.Toolkit.PaletteGraphicsHint.AntiAlias;
+            this.kryptonTextBox3.StateCommon.Border.Rounding = 20;
+            this.kryptonTextBox3.StateCommon.Border.Width = 1;
+            this.kryptonTextBox3.StateCommon.Content.Color1 = System.Drawing.SystemColors.ActiveBorder;
+            this.kryptonTextBox3.StateCommon.Content.Font = new System.Drawing.Font("Microsoft YaHei UI", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.kryptonTextBox3.StateCommon.Content.Padding = new System.Windows.Forms.Padding(10, 0, 10, 0);
+            this.kryptonTextBox3.TabIndex = 60;
+            this.kryptonTextBox3.TabStop = false;
             // 
-            // label2
+            // label4
             // 
-            this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Microsoft JhengHei UI", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(599, 264);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(136, 22);
-            this.label2.TabIndex = 47;
-            this.label2.Text = "Nacionalidade:";
+            this.label4.AutoSize = true;
+            this.label4.BackColor = System.Drawing.Color.Transparent;
+            this.label4.Font = new System.Drawing.Font("Microsoft YaHei UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label4.Location = new System.Drawing.Point(52, 430);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(73, 27);
+            this.label4.TabIndex = 61;
+            this.label4.Text = "Email:";
             // 
-            // Function
+            // kryptonTextBox4
+            // 
+            this.kryptonTextBox4.AlwaysActive = false;
+            this.kryptonTextBox4.CausesValidation = false;
+            this.kryptonTextBox4.Location = new System.Drawing.Point(54, 544);
+            this.kryptonTextBox4.Name = "kryptonTextBox4";
+            this.kryptonTextBox4.PasswordChar = '●';
+            this.kryptonTextBox4.Size = new System.Drawing.Size(404, 37);
+            this.kryptonTextBox4.StateActive.Back.Color1 = System.Drawing.Color.White;
+            this.kryptonTextBox4.StateActive.Border.Color1 = System.Drawing.SystemColors.ActiveCaptionText;
+            this.kryptonTextBox4.StateActive.Border.Color2 = System.Drawing.SystemColors.ActiveCaptionText;
+            this.kryptonTextBox4.StateActive.Border.DrawBorders = ((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders)((((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Top | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Bottom) 
+            | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Left) 
+            | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Right)));
+            this.kryptonTextBox4.StateActive.Content.Color1 = System.Drawing.SystemColors.ActiveCaptionText;
+            this.kryptonTextBox4.StateActive.Content.Padding = new System.Windows.Forms.Padding(10, 0, 10, 0);
+            this.kryptonTextBox4.StateCommon.Back.Color1 = System.Drawing.Color.White;
+            this.kryptonTextBox4.StateCommon.Border.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(244)))), ((int)(((byte)(244)))), ((int)(((byte)(244)))));
+            this.kryptonTextBox4.StateCommon.Border.Color2 = System.Drawing.Color.FromArgb(((int)(((byte)(244)))), ((int)(((byte)(244)))), ((int)(((byte)(244)))));
+            this.kryptonTextBox4.StateCommon.Border.DrawBorders = ((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders)((((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Top | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Bottom) 
+            | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Left) 
+            | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Right)));
+            this.kryptonTextBox4.StateCommon.Border.GraphicsHint = ComponentFactory.Krypton.Toolkit.PaletteGraphicsHint.AntiAlias;
+            this.kryptonTextBox4.StateCommon.Border.Rounding = 20;
+            this.kryptonTextBox4.StateCommon.Border.Width = 1;
+            this.kryptonTextBox4.StateCommon.Content.Color1 = System.Drawing.SystemColors.ActiveBorder;
+            this.kryptonTextBox4.StateCommon.Content.Font = new System.Drawing.Font("Microsoft YaHei UI", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.kryptonTextBox4.StateCommon.Content.Padding = new System.Windows.Forms.Padding(10, 0, 10, 0);
+            this.kryptonTextBox4.TabIndex = 62;
+            this.kryptonTextBox4.TabStop = false;
+            this.kryptonTextBox4.UseSystemPasswordChar = true;
+            // 
+            // kryptonTextBox5
+            // 
+            this.kryptonTextBox5.AlwaysActive = false;
+            this.kryptonTextBox5.CausesValidation = false;
+            this.kryptonTextBox5.Location = new System.Drawing.Point(54, 631);
+            this.kryptonTextBox5.Name = "kryptonTextBox5";
+            this.kryptonTextBox5.PasswordChar = '●';
+            this.kryptonTextBox5.Size = new System.Drawing.Size(404, 37);
+            this.kryptonTextBox5.StateActive.Back.Color1 = System.Drawing.Color.White;
+            this.kryptonTextBox5.StateActive.Border.Color1 = System.Drawing.SystemColors.ActiveCaptionText;
+            this.kryptonTextBox5.StateActive.Border.Color2 = System.Drawing.SystemColors.ActiveCaptionText;
+            this.kryptonTextBox5.StateActive.Border.DrawBorders = ((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders)((((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Top | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Bottom) 
+            | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Left) 
+            | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Right)));
+            this.kryptonTextBox5.StateActive.Content.Color1 = System.Drawing.SystemColors.ActiveCaptionText;
+            this.kryptonTextBox5.StateActive.Content.Padding = new System.Windows.Forms.Padding(10, 0, 10, 0);
+            this.kryptonTextBox5.StateCommon.Back.Color1 = System.Drawing.Color.White;
+            this.kryptonTextBox5.StateCommon.Border.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(244)))), ((int)(((byte)(244)))), ((int)(((byte)(244)))));
+            this.kryptonTextBox5.StateCommon.Border.Color2 = System.Drawing.Color.FromArgb(((int)(((byte)(244)))), ((int)(((byte)(244)))), ((int)(((byte)(244)))));
+            this.kryptonTextBox5.StateCommon.Border.DrawBorders = ((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders)((((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Top | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Bottom) 
+            | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Left) 
+            | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Right)));
+            this.kryptonTextBox5.StateCommon.Border.GraphicsHint = ComponentFactory.Krypton.Toolkit.PaletteGraphicsHint.AntiAlias;
+            this.kryptonTextBox5.StateCommon.Border.Rounding = 20;
+            this.kryptonTextBox5.StateCommon.Border.Width = 1;
+            this.kryptonTextBox5.StateCommon.Content.Color1 = System.Drawing.SystemColors.ActiveBorder;
+            this.kryptonTextBox5.StateCommon.Content.Font = new System.Drawing.Font("Microsoft YaHei UI", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.kryptonTextBox5.StateCommon.Content.Padding = new System.Windows.Forms.Padding(10, 0, 10, 0);
+            this.kryptonTextBox5.TabIndex = 63;
+            this.kryptonTextBox5.TabStop = false;
+            this.kryptonTextBox5.UseSystemPasswordChar = true;
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.BackColor = System.Drawing.Color.Transparent;
+            this.label5.Font = new System.Drawing.Font("Microsoft YaHei UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label5.Location = new System.Drawing.Point(52, 514);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(114, 27);
+            this.label5.TabIndex = 64;
+            this.label5.Text = "Password:";
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.BackColor = System.Drawing.Color.Transparent;
+            this.label6.Font = new System.Drawing.Font("Microsoft YaHei UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label6.Location = new System.Drawing.Point(52, 601);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(221, 27);
+            this.label6.TabIndex = 65;
+            this.label6.Text = "Confirmar Password:";
+            // 
+            // Register
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(250)))), ((int)(((byte)(252)))), ((int)(((byte)(252)))));
-            this.ClientSize = new System.Drawing.Size(1739, 828);
-            this.Controls.Add(this.comboBox3);
-            this.Controls.Add(this.label2);
-            this.Controls.Add(this.comboBox2);
-            this.Controls.Add(this.label1);
-            this.Controls.Add(this.comboBox1);
+            this.ClientSize = new System.Drawing.Size(511, 800);
+            this.Controls.Add(this.label6);
+            this.Controls.Add(this.label5);
+            this.Controls.Add(this.kryptonTextBox5);
+            this.Controls.Add(this.kryptonTextBox4);
             this.Controls.Add(this.label4);
-            this.Controls.Add(this.kryptonTextBox1);
+            this.Controls.Add(this.kryptonTextBox3);
+            this.Controls.Add(this.pictureBox1);
+            this.Controls.Add(this.iconButton2);
             this.Controls.Add(this.iconButton1);
-            this.Controls.Add(this.iconButton7);
-            this.Controls.Add(this.iconButton4);
-            this.Controls.Add(this.dataGridView1);
-            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
-            this.Name = "Function";
+            this.Controls.Add(this.label3);
+            this.Controls.Add(this.label2);
+            this.Controls.Add(this.label1);
+            this.Controls.Add(this.kryptonTextBox2);
+            this.Controls.Add(this.kryptonTextBox1);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.Name = "Register";
             this.Palette = this.kryptonPalette1;
             this.PaletteMode = ComponentFactory.Krypton.Toolkit.PaletteMode.Custom;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Function";
-            this.Load += new System.EventHandler(this.Function_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            this.Text = "Registo";
+            this.Load += new System.EventHandler(this.Registo_Load);
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
         }
 
         #endregion
-
         private ComponentFactory.Krypton.Toolkit.KryptonPalette kryptonPalette1;
-        private System.Windows.Forms.DataGridView dataGridView1;
-        private System.Windows.Forms.DataGridViewLinkColumn name;
-        private System.Windows.Forms.DataGridViewTextBoxColumn school;
-        private System.Windows.Forms.DataGridViewTextBoxColumn schoolNumber;
-        private System.Windows.Forms.DataGridViewTextBoxColumn nationality;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dwfPoints;
-        private System.Windows.Forms.DataGridViewTextBoxColumn saatyIndex;
-        private FontAwesome.Sharp.IconButton iconButton4;
-        private FontAwesome.Sharp.IconButton iconButton7;
         private FontAwesome.Sharp.IconButton iconButton1;
-        private System.Windows.Forms.ComboBox comboBox1;
-        private System.Windows.Forms.Label label4;
-        private ComponentFactory.Krypton.Toolkit.KryptonTextBox kryptonTextBox1;
-        private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.ComboBox comboBox2;
-        private System.Windows.Forms.ComboBox comboBox3;
+        private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Label label1;
+        private ComponentFactory.Krypton.Toolkit.KryptonTextBox kryptonTextBox2;
+        private ComponentFactory.Krypton.Toolkit.KryptonTextBox kryptonTextBox1;
+        private FontAwesome.Sharp.IconButton iconButton2;
+        private System.Windows.Forms.PictureBox pictureBox1;
+        private ComponentFactory.Krypton.Toolkit.KryptonTextBox kryptonTextBox3;
+        private System.Windows.Forms.Label label4;
+        private ComponentFactory.Krypton.Toolkit.KryptonTextBox kryptonTextBox4;
+        private ComponentFactory.Krypton.Toolkit.KryptonTextBox kryptonTextBox5;
+        private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.Label label6;
     }
 }

@@ -28,5 +28,10 @@ namespace DecisionsWorkFlow.Content.Project.Functions
                 dataGridView1.Rows.Add(x.Name, x.School, x.SchoolNumber, x.Nationality, x.DwfPoints, x.SaatyIndex)
             );
         }
+
+        private void comboBox3_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }

@@ -73,9 +73,39 @@ namespace DecisionsWorkFlow.Properties {
         /// <summary>
         ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap Blocks_1s_200px {
+            get {
+                object obj = ResourceManager.GetObject("Blocks-1s-200px", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap close_btn_demo {
             get {
                 object obj = ResourceManager.GetObject("close-btn-demo", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap logo_big_black_slogan {
+            get {
+                object obj = ResourceManager.GetObject("logo-big-black-slogan", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap logo_big_white_slogan {
+            get {
+                object obj = ResourceManager.GetObject("logo-big-white-slogan", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

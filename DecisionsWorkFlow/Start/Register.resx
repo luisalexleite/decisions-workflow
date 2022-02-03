@@ -117,53 +117,7 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
-  <data name="Programming-Delete-Sign-icon" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\Programming-Delete-Sign-icon.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="close-btn-demo" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\close-btn-demo.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="logo-sm-black" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\logo-sm-black.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="max-btn-demo" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\max-btn-demo.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="sign-error-icon" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\sign-error-icon.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="sync-solid" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\sync-solid.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="mc-red" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\mc-red.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="mc-yellw" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\mc-yellw.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="mc-green" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\mc-green.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="833432" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\833432.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="sign-error-icon (1)" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\sign-error-icon (1).png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="Usability testing-amico" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\Usability testing-amico.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="times-circle-regular" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\times-circle-regular.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="logo-big-white-slogan" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\logo-big-white-slogan.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="Blocks-1s-200px" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\Blocks-1s-200px.gif;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="logo-big-black-slogan" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\logo-big-black-slogan.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
+  <metadata name="kryptonPalette1.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>17, 17</value>
+  </metadata>
 </root>

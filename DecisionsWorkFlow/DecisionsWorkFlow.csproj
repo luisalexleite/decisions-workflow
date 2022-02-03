@@ -96,6 +96,7 @@
     <Reference Include="WindowsFormsIntegration" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Classes\ManageProjects.cs" />
     <Compile Include="Content\Projects\AddProject.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -113,6 +114,30 @@
     </Compile>
     <Compile Include="Content\Projects\ProjectInfo.Designer.cs">
       <DependentUpon>ProjectInfo.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Content\Project\Functions\Attributes.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Content\Project\Functions\Attributes.Designer.cs">
+      <DependentUpon>Attributes.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Content\Project\Functions\Function.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Content\Project\Functions\Function.Designer.cs">
+      <DependentUpon>Function.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Content\Project\Functions\FunctionInfo.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Content\Project\Functions\FunctionInfo.Designer.cs">
+      <DependentUpon>FunctionInfo.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Content\Project\Functions\Functions.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Content\Project\Functions\Functions.Designer.cs">
+      <DependentUpon>Functions.cs</DependentUpon>
     </Compile>
     <Compile Include="Content\Project\Project.cs">
       <SubType>Form</SubType>
@@ -144,6 +169,18 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Content\Projects\ProjectInfo.resx">
       <DependentUpon>ProjectInfo.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Content\Project\Functions\Attributes.resx">
+      <DependentUpon>Attributes.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Content\Project\Functions\Function.resx">
+      <DependentUpon>Function.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Content\Project\Functions\FunctionInfo.resx">
+      <DependentUpon>FunctionInfo.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Content\Project\Functions\Functions.resx">
+      <DependentUpon>Functions.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Content\Project\Project.resx">
       <DependentUpon>Project.cs</DependentUpon>
@@ -223,7 +260,6 @@
     <None Include="Resources\times-circle-regular.png" />
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="Content\Project\Functions\" />
     <Folder Include="Start\" />
   </ItemGroup>
   <ItemGroup>

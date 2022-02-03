@@ -89,5 +89,6 @@ namespace DecisionsWorkFlow.Content.Project.Students
             this.Close();
             project.OnOpen();
         }
+
     }
 }

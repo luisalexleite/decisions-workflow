@@ -1,6 +1,6 @@
-﻿namespace DecisionsWorkFlow.Content.Projects
+﻿namespace DecisionsWorkFlow.Content.Project.Functions
 {
-    partial class ProjectInfo
+    partial class FunctionInfo
     {
         /// <summary> 
         /// Variável de designer necessária.
@@ -29,52 +29,50 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
+            this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
-            this.label2 = new System.Windows.Forms.Label();
             this.SuspendLayout();
-            // 
-            // label1
-            // 
-            this.label1.Font = new System.Drawing.Font("Microsoft YaHei UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(250)))), ((int)(((byte)(252)))), ((int)(((byte)(252)))));
-            this.label1.Location = new System.Drawing.Point(19, 13);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(271, 37);
-            this.label1.TabIndex = 0;
-            this.label1.Text = "Nome do Projeto";
-            this.toolTip1.SetToolTip(this.label1, "Nome do Projeto\r\n");
             // 
             // label2
             // 
             this.label2.Font = new System.Drawing.Font("Microsoft YaHei UI", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(250)))), ((int)(((byte)(252)))), ((int)(((byte)(252)))));
-            this.label2.Location = new System.Drawing.Point(23, 74);
+            this.label2.Location = new System.Drawing.Point(22, 72);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(267, 89);
-            this.label2.TabIndex = 1;
-            this.label2.Text = "Descrição do Projeto";
-            this.toolTip1.SetToolTip(this.label2, "Título do Projeto");
+            this.label2.TabIndex = 3;
+            this.label2.Text = "Descrição da Função";
             // 
-            // ProjectInfo
+            // label1
+            // 
+            this.label1.Font = new System.Drawing.Font("Microsoft YaHei UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(250)))), ((int)(((byte)(252)))), ((int)(((byte)(252)))));
+            this.label1.Location = new System.Drawing.Point(18, 11);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(271, 37);
+            this.label1.TabIndex = 2;
+            this.label1.Text = "Nome da Função";
+            // 
+            // FunctionInfo
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
-            this.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.Name = "ProjectInfo";
+            this.Name = "FunctionInfo";
             this.Size = new System.Drawing.Size(306, 172);
-            this.Load += new System.EventHandler(this.UserControl1_Load);
+            this.Load += new System.EventHandler(this.FunctionInfo_Load);
+            this.Click += new System.EventHandler(this.FunctionInfo_Click);
             this.ResumeLayout(false);
 
         }
 
         #endregion
 
+        private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.ToolTip toolTip1;
-        private System.Windows.Forms.Label label2;
     }
 }

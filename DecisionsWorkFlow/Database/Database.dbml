@@ -6,8 +6,32 @@
       <Column Name="attr_name" Type="System.String" DbType="VarChar(255)" CanBeNull="true" />
       <Column Name="attr_abbr" Type="System.String" DbType="VarChar(255)" CanBeNull="true" />
       <Column Name="project_id" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Association Name="attributes_functions_attributes" Member="functions_attributes" ThisKey="id" OtherKey="attr_id" Type="functions_attributes" />
       <Association Name="attributes_students_attributes" Member="students_attributes" ThisKey="id" OtherKey="attr_id" Type="students_attributes" />
       <Association Name="projects_attributes" Member="projects" ThisKey="project_id" OtherKey="id" Type="projects" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.functions" Member="functions">
+    <Type Name="functions">
+      <Column Name="id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="project_id" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="func_name" Type="System.String" DbType="VarChar(255)" CanBeNull="true" />
+      <Column Name="func_desc" Type="System.String" DbType="Text" CanBeNull="true" UpdateCheck="Never" />
+      <Column Name="weight_set" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="created_at" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="updated_at" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Association Name="functions_functions_attributes" Member="functions_attributes" ThisKey="id" OtherKey="func_id" Type="functions_attributes" />
+      <Association Name="projects_functions" Member="projects" ThisKey="project_id" OtherKey="id" Type="projects" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.functions_attributes" Member="functions_attributes">
+    <Type Name="functions_attributes">
+      <Column Name="id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="attr_id" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="func_id" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="attr_weight" Type="System.Single" DbType="Real" CanBeNull="true" />
+      <Association Name="attributes_functions_attributes" Member="attributes" ThisKey="attr_id" OtherKey="id" Type="attributes" IsForeignKey="true" />
+      <Association Name="functions_functions_attributes" Member="functions" ThisKey="func_id" OtherKey="id" Type="functions" IsForeignKey="true" />
     </Type>
   </Table>
   <Table Name="dbo.projects" Member="projects">
@@ -20,6 +44,7 @@
       <Column Name="created_at" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
       <Column Name="updated_at" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
       <Association Name="projects_attributes" Member="attributes" ThisKey="id" OtherKey="project_id" Type="attributes" />
+      <Association Name="projects_functions" Member="functions" ThisKey="id" OtherKey="project_id" Type="functions" />
       <Association Name="projects_students" Member="students" ThisKey="id" OtherKey="project_id" Type="students" />
       <Association Name="projects_users_projects" Member="users_projects" ThisKey="id" OtherKey="project_id" Type="users_projects" />
       <Association Name="users_projects" Member="users" ThisKey="project_admin" OtherKey="id" Type="users" IsForeignKey="true" />
@@ -48,6 +73,7 @@
   </Table>
   <Table Name="dbo.students_attributes" Member="students_attributes">
     <Type Name="students_attributes">
+      <Column Name="id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
       <Column Name="attr_id" Type="System.Int32" DbType="Int" CanBeNull="true" />
       <Column Name="student_id" Type="System.Int32" DbType="Int" CanBeNull="true" />
       <Column Name="attr_value" Type="System.Int32" DbType="Int" CanBeNull="true" />
@@ -70,6 +96,7 @@
   </Table>
   <Table Name="dbo.users_projects" Member="users_projects">
     <Type Name="users_projects">
+      <Column Name="id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
       <Column Name="user_id" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
       <Column Name="project_id" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
       <Association Name="projects_users_projects" Member="projects" ThisKey="project_id" OtherKey="id" Type="projects" IsForeignKey="true" />

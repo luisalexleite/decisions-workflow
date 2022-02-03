@@ -10,12 +10,19 @@ namespace DecisionsWorkFlow.Database
     {
         private DatabaseDataContext database = new DatabaseDataContext();
 
-        public List<projects> GetProjectList (int user, bool terminated, string queryText = "", int queryOrder = 0)
+        public class CompareAttributes
         {
-           int[] usersList = database.users_projects.Where(up => up.user_id == user).Select(up => up.project_id).ToArray();
+            public string attr1 { get; set; }
+            public string attr2 { get; set; }
+            public int val { get; set; }
+        }
 
-           var projects = database.projects.Where(p => p.project_admin == user || usersList.Contains(p.id)).Where(p => p.project_name.Contains(queryText)).Where(p => p.terminated == terminated);
-           
+        public List<projects> GetProjectList(int user, bool terminated, string queryText = "", int queryOrder = 0)
+        {
+            int[] usersList = database.users_projects.Where(up => up.user_id == user).Select(up => up.project_id).ToArray();
+
+            var projects = database.projects.Where(p => p.project_admin == user || usersList.Contains(p.id)).Where(p => p.project_name.Contains(queryText)).Where(p => p.terminated == terminated);
+
             switch (queryOrder)
             {
                 case 0:
@@ -32,12 +39,12 @@ namespace DecisionsWorkFlow.Database
 
         }
 
-        public users GetUserData (int user)
+        public users GetUserData(int user)
         {
             return database.users.Where(u => u.id == user).FirstOrDefault();
         }
 
-        public projects GetProjectData (int project)
+        public projects GetProjectData(int project)
         {
             return database.projects.Where(p => p.id == project).FirstOrDefault();
         }
@@ -59,7 +66,7 @@ namespace DecisionsWorkFlow.Database
 
         public IQueryable<IGrouping<int?, students>> StudentsBySchool(int project)
         {
-           return database.students.Where(s => s.project_id == project).GroupBy(s => s.school_id);
+            return database.students.Where(s => s.project_id == project).GroupBy(s => s.school_id);
         }
 
         public schools GetSchool(int? school_id)
@@ -80,5 +87,81 @@ namespace DecisionsWorkFlow.Database
         {
             return database.students_attributes.Where(sa => sa.student_id == student).Select(sa => sa.attr_value).ToList();
         }
+
+        public List<functions> GetFunctionList(int project, string queryText = "", int queryOrder = 0)
+        {
+            var functions = database.functions.Where(p => p.project_id == project).Where(p => p.func_name.Contains(queryText));
+
+            switch (queryOrder)
+            {
+                case 0:
+                    return functions.OrderBy(p => p.func_name).ToList();
+                case 1:
+                    return functions.OrderByDescending(p => p.func_name).ToList();
+                case 2:
+                    return functions.OrderBy(p => p.created_at).ToList();
+                case 3:
+                    return functions.OrderByDescending(p => p.created_at).ToList();
+                default:
+                    return functions.OrderBy(p => p.func_name).ToList();
+            }
+
+        }
+
+    public List<CompareAttributes> GetCompareAttributes(int id)
+        {
+            var project_id = database.functions.Where(f => f.id == id).Select(f => f.project_id).FirstOrDefault();
+            var instance = database.attributes.Where(a => a.project_id == project_id).Select(a => a.attr_name);
+            var count = instance.Count();
+
+            List<CompareAttributes> attributeList= new List<CompareAttributes>();
+
+            for (int i = 1; i <= count - 1; i++)
+            {
+                for (int j = 0; j <= i-1; j++)
+                {
+                    attributeList.Add(new CompareAttributes { attr1 = instance.ToList()[i].ToString(), attr2 = instance.ToList()[j].ToString(), val = 5 });
+                }
+            }
+
+            return attributeList;
+        }
+        public void SetFunctionWeights(int id, float[] arr)
+        {
+            var function = database.functions.Single(f => f.id == id);
+            function.weight_set = true;
+
+            int i = 0;
+            database.attributes.Where(a => a.project_id == function.project_id).ToList().ForEach(fa =>
+            {
+                database.functions_attributes.InsertOnSubmit(new functions_attributes() { attr_id = fa.id, func_id = id, attr_weight = (float)arr[i] });
+            }
+            );
+
+            database.SubmitChanges();
+        }
+
+        public void UpdateFunctionWeights(int id, float[] arr)
+        {
+            var changeWeightsQuery =
+            from u in database.functions_attributes
+            where u.func_id == id
+            select u;
+
+            int i = 0;
+            foreach (var weight in changeWeightsQuery)
+            {
+                weight.attr_weight = arr[i];
+                i++;
+            }
+        }
+
+        public functions GetProjectByFunction(int id)
+        {
+            return database.functions.Single(f => f.id == id);
+        }
+
     }
+
+
 }

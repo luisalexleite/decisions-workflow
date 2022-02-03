@@ -9,6 +9,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using ComponentFactory.Krypton.Toolkit;
 using DecisionsWorkFlow.Database;
+using DecisionsWorkFlow.Content.Project.Functions;
 using System.Globalization;
 
 namespace DecisionsWorkFlow.Content.Project
@@ -48,7 +49,7 @@ namespace DecisionsWorkFlow.Content.Project
         private void LoadContent()
         {
             ClearControls();
-            this.Text = "Decisions WorkFlow - Project ( " + database.GetProjectData(id).project_name + " )";
+            this.Text = "Decisions WorkFlow - Projeto ( " + database.GetProjectData(id).project_name + " )";
             label2.Text = database.GetProjectData(id).project_name;
             label4.Text = database.GetUserData(database.GetProjectData(id).project_admin).fname + " " + database.GetUserData(database.GetProjectData(id).project_admin).lname;
             label6.Text = database.GetProjectData(id).created_at.ToShortDateString();
@@ -93,6 +94,13 @@ namespace DecisionsWorkFlow.Content.Project
         private void iconButton7_Click(object sender, EventArgs e)
         {
             LoadContent();
+        }
+
+        private void iconButton5_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            Functions.Functions func = new Functions.Functions(id);
+            func.Show();
         }
     }
 }

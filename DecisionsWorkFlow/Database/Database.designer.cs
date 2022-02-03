@@ -33,6 +33,12 @@ namespace DecisionsWorkFlow.Database
     partial void Insertattributes(attributes instance);
     partial void Updateattributes(attributes instance);
     partial void Deleteattributes(attributes instance);
+    partial void Insertfunctions(functions instance);
+    partial void Updatefunctions(functions instance);
+    partial void Deletefunctions(functions instance);
+    partial void Insertfunctions_attributes(functions_attributes instance);
+    partial void Updatefunctions_attributes(functions_attributes instance);
+    partial void Deletefunctions_attributes(functions_attributes instance);
     partial void Insertprojects(projects instance);
     partial void Updateprojects(projects instance);
     partial void Deleteprojects(projects instance);
@@ -42,9 +48,15 @@ namespace DecisionsWorkFlow.Database
     partial void Insertstudents(students instance);
     partial void Updatestudents(students instance);
     partial void Deletestudents(students instance);
+    partial void Insertstudents_attributes(students_attributes instance);
+    partial void Updatestudents_attributes(students_attributes instance);
+    partial void Deletestudents_attributes(students_attributes instance);
     partial void Insertusers(users instance);
     partial void Updateusers(users instance);
     partial void Deleteusers(users instance);
+    partial void Insertusers_projects(users_projects instance);
+    partial void Updateusers_projects(users_projects instance);
+    partial void Deleteusers_projects(users_projects instance);
     #endregion
 		
 		public DatabaseDataContext() : 
@@ -82,6 +94,22 @@ namespace DecisionsWorkFlow.Database
 			get
 			{
 				return this.GetTable<attributes>();
+			}
+		}
+		
+		public System.Data.Linq.Table<functions> functions
+		{
+			get
+			{
+				return this.GetTable<functions>();
+			}
+		}
+		
+		public System.Data.Linq.Table<functions_attributes> functions_attributes
+		{
+			get
+			{
+				return this.GetTable<functions_attributes>();
 			}
 		}
 		
@@ -148,6 +176,10 @@ namespace DecisionsWorkFlow.Database
 		
 		private System.Nullable<int> _project_id;
 		
+		private EntitySet<functions_attributes> _functions_attributes;
+		
+		private EntitySet<students_attributes> _students_attributes;
+		
 		private EntityRef<projects> _projects;
 		
     #region Extensibility Method Definitions
@@ -166,6 +198,8 @@ namespace DecisionsWorkFlow.Database
 		
 		public attributes()
 		{
+			this._functions_attributes = new EntitySet<functions_attributes>(new Action<functions_attributes>(this.attach_functions_attributes), new Action<functions_attributes>(this.detach_functions_attributes));
+			this._students_attributes = new EntitySet<students_attributes>(new Action<students_attributes>(this.attach_students_attributes), new Action<students_attributes>(this.detach_students_attributes));
 			this._projects = default(EntityRef<projects>);
 			OnCreated();
 		}
@@ -254,6 +288,32 @@ namespace DecisionsWorkFlow.Database
 			}
 		}
 		
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="attributes_functions_attributes", Storage="_functions_attributes", ThisKey="id", OtherKey="attr_id")]
+		public EntitySet<functions_attributes> functions_attributes
+		{
+			get
+			{
+				return this._functions_attributes;
+			}
+			set
+			{
+				this._functions_attributes.Assign(value);
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="attributes_students_attributes", Storage="_students_attributes", ThisKey="id", OtherKey="attr_id")]
+		public EntitySet<students_attributes> students_attributes
+		{
+			get
+			{
+				return this._students_attributes;
+			}
+			set
+			{
+				this._students_attributes.Assign(value);
+			}
+		}
+		
 		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="projects_attributes", Storage="_projects", ThisKey="project_id", OtherKey="id", IsForeignKey=true)]
 		public projects projects
 		{
@@ -307,6 +367,521 @@ namespace DecisionsWorkFlow.Database
 				this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
 			}
 		}
+		
+		private void attach_functions_attributes(functions_attributes entity)
+		{
+			this.SendPropertyChanging();
+			entity.attributes = this;
+		}
+		
+		private void detach_functions_attributes(functions_attributes entity)
+		{
+			this.SendPropertyChanging();
+			entity.attributes = null;
+		}
+		
+		private void attach_students_attributes(students_attributes entity)
+		{
+			this.SendPropertyChanging();
+			entity.attributes = this;
+		}
+		
+		private void detach_students_attributes(students_attributes entity)
+		{
+			this.SendPropertyChanging();
+			entity.attributes = null;
+		}
+	}
+	
+	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.functions")]
+	public partial class functions : INotifyPropertyChanging, INotifyPropertyChanged
+	{
+		
+		private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
+		
+		private int _id;
+		
+		private System.Nullable<int> _project_id;
+		
+		private string _func_name;
+		
+		private string _func_desc;
+		
+		private bool _weight_set;
+		
+		private System.DateTime _created_at;
+		
+		private System.Nullable<System.DateTime> _updated_at;
+		
+		private EntitySet<functions_attributes> _functions_attributes;
+		
+		private EntityRef<projects> _projects;
+		
+    #region Extensibility Method Definitions
+    partial void OnLoaded();
+    partial void OnValidate(System.Data.Linq.ChangeAction action);
+    partial void OnCreated();
+    partial void OnidChanging(int value);
+    partial void OnidChanged();
+    partial void Onproject_idChanging(System.Nullable<int> value);
+    partial void Onproject_idChanged();
+    partial void Onfunc_nameChanging(string value);
+    partial void Onfunc_nameChanged();
+    partial void Onfunc_descChanging(string value);
+    partial void Onfunc_descChanged();
+    partial void Onweight_setChanging(bool value);
+    partial void Onweight_setChanged();
+    partial void Oncreated_atChanging(System.DateTime value);
+    partial void Oncreated_atChanged();
+    partial void Onupdated_atChanging(System.Nullable<System.DateTime> value);
+    partial void Onupdated_atChanged();
+    #endregion
+		
+		public functions()
+		{
+			this._functions_attributes = new EntitySet<functions_attributes>(new Action<functions_attributes>(this.attach_functions_attributes), new Action<functions_attributes>(this.detach_functions_attributes));
+			this._projects = default(EntityRef<projects>);
+			OnCreated();
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_id", AutoSync=AutoSync.OnInsert, DbType="Int NOT NULL IDENTITY", IsPrimaryKey=true, IsDbGenerated=true)]
+		public int id
+		{
+			get
+			{
+				return this._id;
+			}
+			set
+			{
+				if ((this._id != value))
+				{
+					this.OnidChanging(value);
+					this.SendPropertyChanging();
+					this._id = value;
+					this.SendPropertyChanged("id");
+					this.OnidChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_project_id", DbType="Int")]
+		public System.Nullable<int> project_id
+		{
+			get
+			{
+				return this._project_id;
+			}
+			set
+			{
+				if ((this._project_id != value))
+				{
+					if (this._projects.HasLoadedOrAssignedValue)
+					{
+						throw new System.Data.Linq.ForeignKeyReferenceAlreadyHasValueException();
+					}
+					this.Onproject_idChanging(value);
+					this.SendPropertyChanging();
+					this._project_id = value;
+					this.SendPropertyChanged("project_id");
+					this.Onproject_idChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_func_name", DbType="VarChar(255)")]
+		public string func_name
+		{
+			get
+			{
+				return this._func_name;
+			}
+			set
+			{
+				if ((this._func_name != value))
+				{
+					this.Onfunc_nameChanging(value);
+					this.SendPropertyChanging();
+					this._func_name = value;
+					this.SendPropertyChanged("func_name");
+					this.Onfunc_nameChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_func_desc", DbType="Text", UpdateCheck=UpdateCheck.Never)]
+		public string func_desc
+		{
+			get
+			{
+				return this._func_desc;
+			}
+			set
+			{
+				if ((this._func_desc != value))
+				{
+					this.Onfunc_descChanging(value);
+					this.SendPropertyChanging();
+					this._func_desc = value;
+					this.SendPropertyChanged("func_desc");
+					this.Onfunc_descChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_weight_set", DbType="Bit NOT NULL")]
+		public bool weight_set
+		{
+			get
+			{
+				return this._weight_set;
+			}
+			set
+			{
+				if ((this._weight_set != value))
+				{
+					this.Onweight_setChanging(value);
+					this.SendPropertyChanging();
+					this._weight_set = value;
+					this.SendPropertyChanged("weight_set");
+					this.Onweight_setChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_created_at", DbType="DateTime NOT NULL")]
+		public System.DateTime created_at
+		{
+			get
+			{
+				return this._created_at;
+			}
+			set
+			{
+				if ((this._created_at != value))
+				{
+					this.Oncreated_atChanging(value);
+					this.SendPropertyChanging();
+					this._created_at = value;
+					this.SendPropertyChanged("created_at");
+					this.Oncreated_atChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_updated_at", DbType="DateTime")]
+		public System.Nullable<System.DateTime> updated_at
+		{
+			get
+			{
+				return this._updated_at;
+			}
+			set
+			{
+				if ((this._updated_at != value))
+				{
+					this.Onupdated_atChanging(value);
+					this.SendPropertyChanging();
+					this._updated_at = value;
+					this.SendPropertyChanged("updated_at");
+					this.Onupdated_atChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="functions_functions_attributes", Storage="_functions_attributes", ThisKey="id", OtherKey="func_id")]
+		public EntitySet<functions_attributes> functions_attributes
+		{
+			get
+			{
+				return this._functions_attributes;
+			}
+			set
+			{
+				this._functions_attributes.Assign(value);
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="projects_functions", Storage="_projects", ThisKey="project_id", OtherKey="id", IsForeignKey=true)]
+		public projects projects
+		{
+			get
+			{
+				return this._projects.Entity;
+			}
+			set
+			{
+				projects previousValue = this._projects.Entity;
+				if (((previousValue != value) 
+							|| (this._projects.HasLoadedOrAssignedValue == false)))
+				{
+					this.SendPropertyChanging();
+					if ((previousValue != null))
+					{
+						this._projects.Entity = null;
+						previousValue.functions.Remove(this);
+					}
+					this._projects.Entity = value;
+					if ((value != null))
+					{
+						value.functions.Add(this);
+						this._project_id = value.id;
+					}
+					else
+					{
+						this._project_id = default(Nullable<int>);
+					}
+					this.SendPropertyChanged("projects");
+				}
+			}
+		}
+		
+		public event PropertyChangingEventHandler PropertyChanging;
+		
+		public event PropertyChangedEventHandler PropertyChanged;
+		
+		protected virtual void SendPropertyChanging()
+		{
+			if ((this.PropertyChanging != null))
+			{
+				this.PropertyChanging(this, emptyChangingEventArgs);
+			}
+		}
+		
+		protected virtual void SendPropertyChanged(String propertyName)
+		{
+			if ((this.PropertyChanged != null))
+			{
+				this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
+			}
+		}
+		
+		private void attach_functions_attributes(functions_attributes entity)
+		{
+			this.SendPropertyChanging();
+			entity.functions = this;
+		}
+		
+		private void detach_functions_attributes(functions_attributes entity)
+		{
+			this.SendPropertyChanging();
+			entity.functions = null;
+		}
+	}
+	
+	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.functions_attributes")]
+	public partial class functions_attributes : INotifyPropertyChanging, INotifyPropertyChanged
+	{
+		
+		private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
+		
+		private int _id;
+		
+		private System.Nullable<int> _attr_id;
+		
+		private System.Nullable<int> _func_id;
+		
+		private System.Nullable<float> _attr_weight;
+		
+		private EntityRef<attributes> _attributes;
+		
+		private EntityRef<functions> _functions;
+		
+    #region Extensibility Method Definitions
+    partial void OnLoaded();
+    partial void OnValidate(System.Data.Linq.ChangeAction action);
+    partial void OnCreated();
+    partial void OnidChanging(int value);
+    partial void OnidChanged();
+    partial void Onattr_idChanging(System.Nullable<int> value);
+    partial void Onattr_idChanged();
+    partial void Onfunc_idChanging(System.Nullable<int> value);
+    partial void Onfunc_idChanged();
+    partial void Onattr_weightChanging(System.Nullable<float> value);
+    partial void Onattr_weightChanged();
+    #endregion
+		
+		public functions_attributes()
+		{
+			this._attributes = default(EntityRef<attributes>);
+			this._functions = default(EntityRef<functions>);
+			OnCreated();
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_id", AutoSync=AutoSync.OnInsert, DbType="Int NOT NULL IDENTITY", IsPrimaryKey=true, IsDbGenerated=true)]
+		public int id
+		{
+			get
+			{
+				return this._id;
+			}
+			set
+			{
+				if ((this._id != value))
+				{
+					this.OnidChanging(value);
+					this.SendPropertyChanging();
+					this._id = value;
+					this.SendPropertyChanged("id");
+					this.OnidChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_attr_id", DbType="Int")]
+		public System.Nullable<int> attr_id
+		{
+			get
+			{
+				return this._attr_id;
+			}
+			set
+			{
+				if ((this._attr_id != value))
+				{
+					if (this._attributes.HasLoadedOrAssignedValue)
+					{
+						throw new System.Data.Linq.ForeignKeyReferenceAlreadyHasValueException();
+					}
+					this.Onattr_idChanging(value);
+					this.SendPropertyChanging();
+					this._attr_id = value;
+					this.SendPropertyChanged("attr_id");
+					this.Onattr_idChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_func_id", DbType="Int")]
+		public System.Nullable<int> func_id
+		{
+			get
+			{
+				return this._func_id;
+			}
+			set
+			{
+				if ((this._func_id != value))
+				{
+					if (this._functions.HasLoadedOrAssignedValue)
+					{
+						throw new System.Data.Linq.ForeignKeyReferenceAlreadyHasValueException();
+					}
+					this.Onfunc_idChanging(value);
+					this.SendPropertyChanging();
+					this._func_id = value;
+					this.SendPropertyChanged("func_id");
+					this.Onfunc_idChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_attr_weight", DbType="Real")]
+		public System.Nullable<float> attr_weight
+		{
+			get
+			{
+				return this._attr_weight;
+			}
+			set
+			{
+				if ((this._attr_weight != value))
+				{
+					this.Onattr_weightChanging(value);
+					this.SendPropertyChanging();
+					this._attr_weight = value;
+					this.SendPropertyChanged("attr_weight");
+					this.Onattr_weightChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="attributes_functions_attributes", Storage="_attributes", ThisKey="attr_id", OtherKey="id", IsForeignKey=true)]
+		public attributes attributes
+		{
+			get
+			{
+				return this._attributes.Entity;
+			}
+			set
+			{
+				attributes previousValue = this._attributes.Entity;
+				if (((previousValue != value) 
+							|| (this._attributes.HasLoadedOrAssignedValue == false)))
+				{
+					this.SendPropertyChanging();
+					if ((previousValue != null))
+					{
+						this._attributes.Entity = null;
+						previousValue.functions_attributes.Remove(this);
+					}
+					this._attributes.Entity = value;
+					if ((value != null))
+					{
+						value.functions_attributes.Add(this);
+						this._attr_id = value.id;
+					}
+					else
+					{
+						this._attr_id = default(Nullable<int>);
+					}
+					this.SendPropertyChanged("attributes");
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="functions_functions_attributes", Storage="_functions", ThisKey="func_id", OtherKey="id", IsForeignKey=true)]
+		public functions functions
+		{
+			get
+			{
+				return this._functions.Entity;
+			}
+			set
+			{
+				functions previousValue = this._functions.Entity;
+				if (((previousValue != value) 
+							|| (this._functions.HasLoadedOrAssignedValue == false)))
+				{
+					this.SendPropertyChanging();
+					if ((previousValue != null))
+					{
+						this._functions.Entity = null;
+						previousValue.functions_attributes.Remove(this);
+					}
+					this._functions.Entity = value;
+					if ((value != null))
+					{
+						value.functions_attributes.Add(this);
+						this._func_id = value.id;
+					}
+					else
+					{
+						this._func_id = default(Nullable<int>);
+					}
+					this.SendPropertyChanged("functions");
+				}
+			}
+		}
+		
+		public event PropertyChangingEventHandler PropertyChanging;
+		
+		public event PropertyChangedEventHandler PropertyChanged;
+		
+		protected virtual void SendPropertyChanging()
+		{
+			if ((this.PropertyChanging != null))
+			{
+				this.PropertyChanging(this, emptyChangingEventArgs);
+			}
+		}
+		
+		protected virtual void SendPropertyChanged(String propertyName)
+		{
+			if ((this.PropertyChanged != null))
+			{
+				this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
+			}
+		}
 	}
 	
 	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.projects")]
@@ -331,7 +906,11 @@ namespace DecisionsWorkFlow.Database
 		
 		private EntitySet<attributes> _attributes;
 		
+		private EntitySet<functions> _functions;
+		
 		private EntitySet<students> _students;
+		
+		private EntitySet<users_projects> _users_projects;
 		
 		private EntityRef<users> _users;
 		
@@ -358,7 +937,9 @@ namespace DecisionsWorkFlow.Database
 		public projects()
 		{
 			this._attributes = new EntitySet<attributes>(new Action<attributes>(this.attach_attributes), new Action<attributes>(this.detach_attributes));
+			this._functions = new EntitySet<functions>(new Action<functions>(this.attach_functions), new Action<functions>(this.detach_functions));
 			this._students = new EntitySet<students>(new Action<students>(this.attach_students), new Action<students>(this.detach_students));
+			this._users_projects = new EntitySet<users_projects>(new Action<users_projects>(this.attach_users_projects), new Action<users_projects>(this.detach_users_projects));
 			this._users = default(EntityRef<users>);
 			OnCreated();
 		}
@@ -520,6 +1101,19 @@ namespace DecisionsWorkFlow.Database
 			}
 		}
 		
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="projects_functions", Storage="_functions", ThisKey="id", OtherKey="project_id")]
+		public EntitySet<functions> functions
+		{
+			get
+			{
+				return this._functions;
+			}
+			set
+			{
+				this._functions.Assign(value);
+			}
+		}
+		
 		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="projects_students", Storage="_students", ThisKey="id", OtherKey="project_id")]
 		public EntitySet<students> students
 		{
@@ -530,6 +1124,19 @@ namespace DecisionsWorkFlow.Database
 			set
 			{
 				this._students.Assign(value);
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="projects_users_projects", Storage="_users_projects", ThisKey="id", OtherKey="project_id")]
+		public EntitySet<users_projects> users_projects
+		{
+			get
+			{
+				return this._users_projects;
+			}
+			set
+			{
+				this._users_projects.Assign(value);
 			}
 		}
 		
@@ -599,6 +1206,18 @@ namespace DecisionsWorkFlow.Database
 			entity.projects = null;
 		}
 		
+		private void attach_functions(functions entity)
+		{
+			this.SendPropertyChanging();
+			entity.projects = this;
+		}
+		
+		private void detach_functions(functions entity)
+		{
+			this.SendPropertyChanging();
+			entity.projects = null;
+		}
+		
 		private void attach_students(students entity)
 		{
 			this.SendPropertyChanging();
@@ -606,6 +1225,18 @@ namespace DecisionsWorkFlow.Database
 		}
 		
 		private void detach_students(students entity)
+		{
+			this.SendPropertyChanging();
+			entity.projects = null;
+		}
+		
+		private void attach_users_projects(users_projects entity)
+		{
+			this.SendPropertyChanging();
+			entity.projects = this;
+		}
+		
+		private void detach_users_projects(users_projects entity)
 		{
 			this.SendPropertyChanging();
 			entity.projects = null;
@@ -768,6 +1399,8 @@ namespace DecisionsWorkFlow.Database
 		
 		private System.Nullable<int> _project_id;
 		
+		private EntitySet<students_attributes> _students_attributes;
+		
 		private EntityRef<projects> _projects;
 		
 		private EntityRef<schools> _schools;
@@ -792,6 +1425,7 @@ namespace DecisionsWorkFlow.Database
 		
 		public students()
 		{
+			this._students_attributes = new EntitySet<students_attributes>(new Action<students_attributes>(this.attach_students_attributes), new Action<students_attributes>(this.detach_students_attributes));
 			this._projects = default(EntityRef<projects>);
 			this._schools = default(EntityRef<schools>);
 			OnCreated();
@@ -925,6 +1559,19 @@ namespace DecisionsWorkFlow.Database
 			}
 		}
 		
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="students_students_attributes", Storage="_students_attributes", ThisKey="id", OtherKey="student_id")]
+		public EntitySet<students_attributes> students_attributes
+		{
+			get
+			{
+				return this._students_attributes;
+			}
+			set
+			{
+				this._students_attributes.Assign(value);
+			}
+		}
+		
 		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="projects_students", Storage="_projects", ThisKey="project_id", OtherKey="id", IsForeignKey=true)]
 		public projects projects
 		{
@@ -1012,11 +1659,27 @@ namespace DecisionsWorkFlow.Database
 				this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
 			}
 		}
+		
+		private void attach_students_attributes(students_attributes entity)
+		{
+			this.SendPropertyChanging();
+			entity.students = this;
+		}
+		
+		private void detach_students_attributes(students_attributes entity)
+		{
+			this.SendPropertyChanging();
+			entity.students = null;
+		}
 	}
 	
 	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.students_attributes")]
-	public partial class students_attributes
+	public partial class students_attributes : INotifyPropertyChanging, INotifyPropertyChanged
 	{
+		
+		private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
+		
+		private int _id;
 		
 		private System.Nullable<int> _attr_id;
 		
@@ -1024,8 +1687,49 @@ namespace DecisionsWorkFlow.Database
 		
 		private System.Nullable<int> _attr_value;
 		
+		private EntityRef<attributes> _attributes;
+		
+		private EntityRef<students> _students;
+		
+    #region Extensibility Method Definitions
+    partial void OnLoaded();
+    partial void OnValidate(System.Data.Linq.ChangeAction action);
+    partial void OnCreated();
+    partial void OnidChanging(int value);
+    partial void OnidChanged();
+    partial void Onattr_idChanging(System.Nullable<int> value);
+    partial void Onattr_idChanged();
+    partial void Onstudent_idChanging(System.Nullable<int> value);
+    partial void Onstudent_idChanged();
+    partial void Onattr_valueChanging(System.Nullable<int> value);
+    partial void Onattr_valueChanged();
+    #endregion
+		
 		public students_attributes()
 		{
+			this._attributes = default(EntityRef<attributes>);
+			this._students = default(EntityRef<students>);
+			OnCreated();
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_id", AutoSync=AutoSync.OnInsert, DbType="Int NOT NULL IDENTITY", IsPrimaryKey=true, IsDbGenerated=true)]
+		public int id
+		{
+			get
+			{
+				return this._id;
+			}
+			set
+			{
+				if ((this._id != value))
+				{
+					this.OnidChanging(value);
+					this.SendPropertyChanging();
+					this._id = value;
+					this.SendPropertyChanged("id");
+					this.OnidChanged();
+				}
+			}
 		}
 		
 		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_attr_id", DbType="Int")]
@@ -1039,7 +1743,15 @@ namespace DecisionsWorkFlow.Database
 			{
 				if ((this._attr_id != value))
 				{
+					if (this._attributes.HasLoadedOrAssignedValue)
+					{
+						throw new System.Data.Linq.ForeignKeyReferenceAlreadyHasValueException();
+					}
+					this.Onattr_idChanging(value);
+					this.SendPropertyChanging();
 					this._attr_id = value;
+					this.SendPropertyChanged("attr_id");
+					this.Onattr_idChanged();
 				}
 			}
 		}
@@ -1055,7 +1767,15 @@ namespace DecisionsWorkFlow.Database
 			{
 				if ((this._student_id != value))
 				{
+					if (this._students.HasLoadedOrAssignedValue)
+					{
+						throw new System.Data.Linq.ForeignKeyReferenceAlreadyHasValueException();
+					}
+					this.Onstudent_idChanging(value);
+					this.SendPropertyChanging();
 					this._student_id = value;
+					this.SendPropertyChanged("student_id");
+					this.Onstudent_idChanged();
 				}
 			}
 		}
@@ -1071,8 +1791,100 @@ namespace DecisionsWorkFlow.Database
 			{
 				if ((this._attr_value != value))
 				{
+					this.Onattr_valueChanging(value);
+					this.SendPropertyChanging();
 					this._attr_value = value;
+					this.SendPropertyChanged("attr_value");
+					this.Onattr_valueChanged();
 				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="attributes_students_attributes", Storage="_attributes", ThisKey="attr_id", OtherKey="id", IsForeignKey=true)]
+		public attributes attributes
+		{
+			get
+			{
+				return this._attributes.Entity;
+			}
+			set
+			{
+				attributes previousValue = this._attributes.Entity;
+				if (((previousValue != value) 
+							|| (this._attributes.HasLoadedOrAssignedValue == false)))
+				{
+					this.SendPropertyChanging();
+					if ((previousValue != null))
+					{
+						this._attributes.Entity = null;
+						previousValue.students_attributes.Remove(this);
+					}
+					this._attributes.Entity = value;
+					if ((value != null))
+					{
+						value.students_attributes.Add(this);
+						this._attr_id = value.id;
+					}
+					else
+					{
+						this._attr_id = default(Nullable<int>);
+					}
+					this.SendPropertyChanged("attributes");
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="students_students_attributes", Storage="_students", ThisKey="student_id", OtherKey="id", IsForeignKey=true)]
+		public students students
+		{
+			get
+			{
+				return this._students.Entity;
+			}
+			set
+			{
+				students previousValue = this._students.Entity;
+				if (((previousValue != value) 
+							|| (this._students.HasLoadedOrAssignedValue == false)))
+				{
+					this.SendPropertyChanging();
+					if ((previousValue != null))
+					{
+						this._students.Entity = null;
+						previousValue.students_attributes.Remove(this);
+					}
+					this._students.Entity = value;
+					if ((value != null))
+					{
+						value.students_attributes.Add(this);
+						this._student_id = value.id;
+					}
+					else
+					{
+						this._student_id = default(Nullable<int>);
+					}
+					this.SendPropertyChanged("students");
+				}
+			}
+		}
+		
+		public event PropertyChangingEventHandler PropertyChanging;
+		
+		public event PropertyChangedEventHandler PropertyChanged;
+		
+		protected virtual void SendPropertyChanging()
+		{
+			if ((this.PropertyChanging != null))
+			{
+				this.PropertyChanging(this, emptyChangingEventArgs);
+			}
+		}
+		
+		protected virtual void SendPropertyChanged(String propertyName)
+		{
+			if ((this.PropertyChanged != null))
+			{
+				this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
 			}
 		}
 	}
@@ -1099,6 +1911,8 @@ namespace DecisionsWorkFlow.Database
 		
 		private EntitySet<projects> _projects;
 		
+		private EntitySet<users_projects> _users_projects;
+		
     #region Extensibility Method Definitions
     partial void OnLoaded();
     partial void OnValidate(System.Data.Linq.ChangeAction action);
@@ -1122,6 +1936,7 @@ namespace DecisionsWorkFlow.Database
 		public users()
 		{
 			this._projects = new EntitySet<projects>(new Action<projects>(this.attach_projects), new Action<projects>(this.detach_projects));
+			this._users_projects = new EntitySet<users_projects>(new Action<users_projects>(this.attach_users_projects), new Action<users_projects>(this.detach_users_projects));
 			OnCreated();
 		}
 		
@@ -1278,6 +2093,19 @@ namespace DecisionsWorkFlow.Database
 			}
 		}
 		
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="users_users_projects", Storage="_users_projects", ThisKey="id", OtherKey="user_id")]
+		public EntitySet<users_projects> users_projects
+		{
+			get
+			{
+				return this._users_projects;
+			}
+			set
+			{
+				this._users_projects.Assign(value);
+			}
+		}
+		
 		public event PropertyChangingEventHandler PropertyChanging;
 		
 		public event PropertyChangedEventHandler PropertyChanged;
@@ -1309,18 +2137,73 @@ namespace DecisionsWorkFlow.Database
 			this.SendPropertyChanging();
 			entity.users = null;
 		}
+		
+		private void attach_users_projects(users_projects entity)
+		{
+			this.SendPropertyChanging();
+			entity.users = this;
+		}
+		
+		private void detach_users_projects(users_projects entity)
+		{
+			this.SendPropertyChanging();
+			entity.users = null;
+		}
 	}
 	
 	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.users_projects")]
-	public partial class users_projects
+	public partial class users_projects : INotifyPropertyChanging, INotifyPropertyChanged
 	{
+		
+		private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
+		
+		private int _id;
 		
 		private int _user_id;
 		
 		private int _project_id;
 		
+		private EntityRef<projects> _projects;
+		
+		private EntityRef<users> _users;
+		
+    #region Extensibility Method Definitions
+    partial void OnLoaded();
+    partial void OnValidate(System.Data.Linq.ChangeAction action);
+    partial void OnCreated();
+    partial void OnidChanging(int value);
+    partial void OnidChanged();
+    partial void Onuser_idChanging(int value);
+    partial void Onuser_idChanged();
+    partial void Onproject_idChanging(int value);
+    partial void Onproject_idChanged();
+    #endregion
+		
 		public users_projects()
 		{
+			this._projects = default(EntityRef<projects>);
+			this._users = default(EntityRef<users>);
+			OnCreated();
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_id", AutoSync=AutoSync.OnInsert, DbType="Int NOT NULL IDENTITY", IsPrimaryKey=true, IsDbGenerated=true)]
+		public int id
+		{
+			get
+			{
+				return this._id;
+			}
+			set
+			{
+				if ((this._id != value))
+				{
+					this.OnidChanging(value);
+					this.SendPropertyChanging();
+					this._id = value;
+					this.SendPropertyChanged("id");
+					this.OnidChanged();
+				}
+			}
 		}
 		
 		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_user_id", DbType="Int NOT NULL")]
@@ -1334,7 +2217,15 @@ namespace DecisionsWorkFlow.Database
 			{
 				if ((this._user_id != value))
 				{
+					if (this._users.HasLoadedOrAssignedValue)
+					{
+						throw new System.Data.Linq.ForeignKeyReferenceAlreadyHasValueException();
+					}
+					this.Onuser_idChanging(value);
+					this.SendPropertyChanging();
 					this._user_id = value;
+					this.SendPropertyChanged("user_id");
+					this.Onuser_idChanged();
 				}
 			}
 		}
@@ -1350,8 +2241,104 @@ namespace DecisionsWorkFlow.Database
 			{
 				if ((this._project_id != value))
 				{
+					if (this._projects.HasLoadedOrAssignedValue)
+					{
+						throw new System.Data.Linq.ForeignKeyReferenceAlreadyHasValueException();
+					}
+					this.Onproject_idChanging(value);
+					this.SendPropertyChanging();
 					this._project_id = value;
+					this.SendPropertyChanged("project_id");
+					this.Onproject_idChanged();
 				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="projects_users_projects", Storage="_projects", ThisKey="project_id", OtherKey="id", IsForeignKey=true)]
+		public projects projects
+		{
+			get
+			{
+				return this._projects.Entity;
+			}
+			set
+			{
+				projects previousValue = this._projects.Entity;
+				if (((previousValue != value) 
+							|| (this._projects.HasLoadedOrAssignedValue == false)))
+				{
+					this.SendPropertyChanging();
+					if ((previousValue != null))
+					{
+						this._projects.Entity = null;
+						previousValue.users_projects.Remove(this);
+					}
+					this._projects.Entity = value;
+					if ((value != null))
+					{
+						value.users_projects.Add(this);
+						this._project_id = value.id;
+					}
+					else
+					{
+						this._project_id = default(int);
+					}
+					this.SendPropertyChanged("projects");
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="users_users_projects", Storage="_users", ThisKey="user_id", OtherKey="id", IsForeignKey=true)]
+		public users users
+		{
+			get
+			{
+				return this._users.Entity;
+			}
+			set
+			{
+				users previousValue = this._users.Entity;
+				if (((previousValue != value) 
+							|| (this._users.HasLoadedOrAssignedValue == false)))
+				{
+					this.SendPropertyChanging();
+					if ((previousValue != null))
+					{
+						this._users.Entity = null;
+						previousValue.users_projects.Remove(this);
+					}
+					this._users.Entity = value;
+					if ((value != null))
+					{
+						value.users_projects.Add(this);
+						this._user_id = value.id;
+					}
+					else
+					{
+						this._user_id = default(int);
+					}
+					this.SendPropertyChanged("users");
+				}
+			}
+		}
+		
+		public event PropertyChangingEventHandler PropertyChanging;
+		
+		public event PropertyChangedEventHandler PropertyChanged;
+		
+		protected virtual void SendPropertyChanging()
+		{
+			if ((this.PropertyChanging != null))
+			{
+				this.PropertyChanging(this, emptyChangingEventArgs);
+			}
+		}
+		
+		protected virtual void SendPropertyChanged(String propertyName)
+		{
+			if ((this.PropertyChanged != null))
+			{
+				this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
 			}
 		}
 	}

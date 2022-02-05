@@ -172,6 +172,7 @@
             this.iconButton4.Text = "Voltar a Trás";
             this.iconButton4.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.iconButton4.UseVisualStyleBackColor = true;
+            this.iconButton4.Click += new System.EventHandler(this.iconButton4_Click);
             // 
             // flowLayoutPanel1
             // 
@@ -199,6 +200,7 @@
             this.iconButton2.Text = "Adicionar Função";
             this.iconButton2.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.iconButton2.UseVisualStyleBackColor = true;
+            this.iconButton2.Click += new System.EventHandler(this.iconButton2_Click);
             // 
             // iconButton7
             // 
@@ -299,7 +301,8 @@
             this.Palette = this.kryptonPalette1;
             this.PaletteMode = ComponentFactory.Krypton.Toolkit.PaletteMode.Custom;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Functions";
+            this.Text = "Decisions WorkFlow - Funções";
+            this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.Functions_FormClosed);
             this.Load += new System.EventHandler(this.Functionscs_Load);
             this.ResumeLayout(false);
             this.PerformLayout();

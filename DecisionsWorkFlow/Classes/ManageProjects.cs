@@ -101,9 +101,22 @@ namespace ProjectoSAD.ManageProjects
 
         //execucao de todas as funcoes necessarias para retornar
         //os valores necesssarios para o calculo final
+
+        public int GetLenght(int lenght)
+        {
+            int i = 0;
+            int j = 0;
+
+            while (i < lenght)
+            {
+                i += ++j;
+            }
+
+            return j;
+        }
         public float[] weightsMatrix(float[] values)
         {
-            int lenght = (int)(values.Length * (double)((values.Length + 1) / 2)) - values.Length;
+            int lenght = GetLenght(values.Length) + 1;
             float[,] val = new float[lenght,lenght];
             int index = 0;
 
@@ -199,6 +212,7 @@ namespace ProjectoSAD.ManageProjects
             {
                 float notNormalizedValue = getRowValue(GetRow(matrix, i));
                 valuesInLine[i] = notNormalizedValue;
+                
                 sum += notNormalizedValue;
             }
 

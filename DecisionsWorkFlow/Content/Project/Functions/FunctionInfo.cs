@@ -81,14 +81,17 @@ namespace DecisionsWorkFlow.Content.Project.Functions
         {
             if (database.GetProjectByFunction(id).weight_set)
             {
-                Function function = new Function();
-                function.Show();
+                Function function = new Function(id, functions);
                 functions.Hide();
+                function.Show();
             }
             else
             {
                 Attributes attr = new Attributes(id);
                 attr.ShowDialog();
+                Function function = new Function(id, functions);
+                functions.Hide();
+                function.Show();
             }
         }
 

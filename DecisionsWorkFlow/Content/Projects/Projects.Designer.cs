@@ -47,7 +47,6 @@
             this.label3 = new System.Windows.Forms.Label();
             this.iconButton6 = new FontAwesome.Sharp.IconButton();
             this.iconButton2 = new FontAwesome.Sharp.IconButton();
-            this.iconButton1 = new FontAwesome.Sharp.IconButton();
             this.iconButton5 = new FontAwesome.Sharp.IconButton();
             this.iconButton4 = new FontAwesome.Sharp.IconButton();
             this.iconButton3 = new FontAwesome.Sharp.IconButton();
@@ -399,7 +398,6 @@
             this.iconButton6.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.iconButton6.CausesValidation = false;
             this.iconButton6.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.iconButton6.Enabled = false;
             this.iconButton6.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.iconButton6.Font = new System.Drawing.Font("Microsoft YaHei UI", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.iconButton6.IconChar = FontAwesome.Sharp.IconChar.UserAltSlash;
@@ -414,6 +412,7 @@
             this.iconButton6.Text = "Terminar Sessão";
             this.iconButton6.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.iconButton6.UseVisualStyleBackColor = true;
+            this.iconButton6.Click += new System.EventHandler(this.iconButton6_Click);
             // 
             // iconButton2
             // 
@@ -435,25 +434,6 @@
             this.iconButton2.Text = "Gestão de Utilizador";
             this.iconButton2.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.iconButton2.UseVisualStyleBackColor = true;
-            // 
-            // iconButton1
-            // 
-            this.iconButton1.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.iconButton1.Enabled = false;
-            this.iconButton1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.iconButton1.Font = new System.Drawing.Font("Microsoft YaHei UI", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.iconButton1.IconChar = FontAwesome.Sharp.IconChar.Upload;
-            this.iconButton1.IconColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.iconButton1.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.iconButton1.IconSize = 62;
-            this.iconButton1.Location = new System.Drawing.Point(469, 12);
-            this.iconButton1.Name = "iconButton1";
-            this.iconButton1.Size = new System.Drawing.Size(140, 127);
-            this.iconButton1.TabIndex = 23;
-            this.iconButton1.TabStop = false;
-            this.iconButton1.Text = "Importar Projeto";
-            this.iconButton1.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
-            this.iconButton1.UseVisualStyleBackColor = true;
             // 
             // iconButton5
             // 
@@ -493,6 +473,7 @@
             this.iconButton4.Text = "Sair";
             this.iconButton4.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.iconButton4.UseVisualStyleBackColor = true;
+            this.iconButton4.Click += new System.EventHandler(this.iconButton4_Click);
             // 
             // iconButton3
             // 
@@ -528,7 +509,6 @@
             this.Controls.Add(this.label1);
             this.Controls.Add(this.iconButton6);
             this.Controls.Add(this.iconButton2);
-            this.Controls.Add(this.iconButton1);
             this.Controls.Add(this.iconButton5);
             this.Controls.Add(this.iconButton4);
             this.Controls.Add(this.iconButton3);
@@ -549,6 +529,7 @@
             this.StateCommon.Border.Width = 0;
             this.StateCommon.OverlayHeaders = ComponentFactory.Krypton.Toolkit.InheritBool.False;
             this.Text = " Decisions WorkFlow - Projetos (Utilizador)";
+            this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.Projects_FormClosed);
             this.Load += new System.EventHandler(this.Form1_Load);
             ((System.ComponentModel.ISupportInitialize)(this.kryptonGroup1.Panel)).EndInit();
             this.kryptonGroup1.Panel.ResumeLayout(false);
@@ -572,7 +553,6 @@
         private FontAwesome.Sharp.IconButton iconButton3;
         private FontAwesome.Sharp.IconButton iconButton4;
         private FontAwesome.Sharp.IconButton iconButton5;
-        private FontAwesome.Sharp.IconButton iconButton1;
         private FontAwesome.Sharp.IconButton iconButton2;
         private FontAwesome.Sharp.IconButton iconButton6;
         private System.Windows.Forms.Label label1;

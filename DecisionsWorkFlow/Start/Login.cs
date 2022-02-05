@@ -95,5 +95,10 @@ namespace DecisionsWorkFlow.Start
             Register register = new Register(this);
             register.ShowDialog();
         }
+
+        private void Login_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            Application.Exit();
+        }
     }
 }

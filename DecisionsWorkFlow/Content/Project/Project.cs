@@ -49,6 +49,36 @@ namespace DecisionsWorkFlow.Content.Project
         private void LoadContent()
         {
             ClearControls();
+            if (database.GetProjectData(id).project_admin != projects.user)
+            {
+                iconButton1.Enabled = false;
+                iconButton6.Enabled = false;
+            }
+            else
+            {
+                iconButton6.Enabled=false;
+            }
+
+            if (database.GetProjectData(id).terminated == true )
+            {
+                iconButton1.Text = "Restaurar Projeto";
+                iconButton2.Enabled = false;
+                iconButton3.Enabled = false;
+                iconButton5.Enabled = false;
+                iconButton6.Enabled = false;
+            } else
+            {
+                iconButton1.Text = "Terminar Projeto";
+                iconButton2.Enabled = true;
+                iconButton3.Enabled = true;
+                iconButton5.Enabled = true;
+            }
+
+            if (database.CountStudents(id) < 2)
+            {
+                iconButton5.Enabled = false;
+            }
+
             this.Text = "Decisions WorkFlow - Projeto ( " + database.GetProjectData(id).project_name + " )";
             label2.Text = database.GetProjectData(id).project_name;
             label4.Text = database.GetUserData(database.GetProjectData(id).project_admin).fname + " " + database.GetUserData(database.GetProjectData(id).project_admin).lname;
@@ -75,7 +105,7 @@ namespace DecisionsWorkFlow.Content.Project
         {
             DecisionsWorkFlow.Projects pr = new DecisionsWorkFlow.Projects(projects.user);
             pr.Show();
-            this.Close();
+            this.Hide();
         }
 
         private void iconButton2_Click(object sender, EventArgs e)
@@ -99,8 +129,26 @@ namespace DecisionsWorkFlow.Content.Project
         private void iconButton5_Click(object sender, EventArgs e)
         {
             this.Hide();
-            Functions.Functions func = new Functions.Functions(id);
+            Functions.Functions func = new Functions.Functions(id,this);
             func.Show();
+        }
+
+        private void iconButton3_Click(object sender, EventArgs e)
+        {
+            AddSchools addSchools = new AddSchools();
+            addSchools.ShowDialog();
+            LoadContent();
+        }
+
+        private void iconButton1_Click(object sender, EventArgs e)
+        {
+            database.TerminateProject(id);
+            LoadContent();
+        }
+
+        private void Project_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            Application.Exit();
         }
     }
 }

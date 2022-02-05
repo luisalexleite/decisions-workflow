@@ -405,6 +405,7 @@
             // 
             this.iconButton6.CausesValidation = false;
             this.iconButton6.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.iconButton6.Enabled = false;
             this.iconButton6.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.iconButton6.Font = new System.Drawing.Font("Microsoft YaHei UI", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.iconButton6.IconChar = FontAwesome.Sharp.IconChar.UserLock;
@@ -461,6 +462,7 @@
             this.iconButton3.Text = "Gestão de Escolas";
             this.iconButton3.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.iconButton3.UseVisualStyleBackColor = true;
+            this.iconButton3.Click += new System.EventHandler(this.iconButton3_Click);
             // 
             // iconButton2
             // 
@@ -502,6 +504,7 @@
             this.iconButton1.Text = "Terminar Projeto";
             this.iconButton1.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.iconButton1.UseVisualStyleBackColor = true;
+            this.iconButton1.Click += new System.EventHandler(this.iconButton1_Click);
             // 
             // iconButton4
             // 
@@ -554,6 +557,7 @@
             this.PaletteMode = ComponentFactory.Krypton.Toolkit.PaletteMode.Custom;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Decisions WorkFlow - Project (Project Name)";
+            this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.Project_FormClosed);
             this.Load += new System.EventHandler(this.Project_Load);
             ((System.ComponentModel.ISupportInitialize)(this.kryptonGroup1.Panel)).EndInit();
             this.kryptonGroup1.Panel.ResumeLayout(false);

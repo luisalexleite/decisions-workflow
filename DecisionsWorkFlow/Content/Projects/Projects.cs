@@ -7,6 +7,7 @@ using System.Windows.Forms;
 using ComponentFactory.Krypton.Toolkit;
 using DecisionsWorkFlow.Content.Projects;
 using DecisionsWorkFlow.Database;
+using DecisionsWorkFlow.Start;
 
 namespace DecisionsWorkFlow
 {
@@ -196,6 +197,23 @@ namespace DecisionsWorkFlow
             AddProject addProject = new AddProject(user);
             addProject.ShowDialog();
             LoadPanels();
+        }
+
+        private void Projects_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            Application.Exit();
+        }
+
+        private void iconButton6_Click(object sender, EventArgs e)
+        {
+            Login login = new Login();
+            login.Show();
+            this.Hide();
+        }
+
+        private void iconButton4_Click(object sender, EventArgs e)
+        {
+            Application.Exit();
         }
     }
 }

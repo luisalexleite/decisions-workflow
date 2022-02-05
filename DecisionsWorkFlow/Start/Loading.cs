@@ -49,5 +49,10 @@ namespace DecisionsWorkFlow.Start
             }
             else { total += 1; }
         }
+
+        private void Loading_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            Application.Exit();
+        }
     }
 }

@@ -33,6 +33,11 @@ namespace DecisionsWorkFlow.Content.Project.Functions
             trackBar1.Value = attributeList.ElementAt(0).val;
             label10.Text = "1 de " + attributeList.Count;
             iconButton3.Enabled = false;
+            if (attributeList.Count == 1)
+            {
+                iconButton2.Enabled = false;
+                iconButton1.Text = "Concluir";
+            }
             ChangeDescription();
         }
 

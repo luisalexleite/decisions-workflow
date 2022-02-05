@@ -63,9 +63,12 @@ namespace DecisionsWorkFlow.Content.Projects
 
         private void iconButton2_Click(object sender, EventArgs e)
         {
-            if (attributeList.Count > 0) { 
-                attributeList.RemoveAt(listBox1.SelectedIndex);
-                LoadAttributes();
+            if (attributeList.Count > 0) {
+                if (listBox1.SelectedIndex >= 0)
+                {
+                    attributeList.RemoveAt(listBox1.SelectedIndex);
+                    LoadAttributes();
+                }
             }
         }
 
@@ -108,6 +111,11 @@ namespace DecisionsWorkFlow.Content.Projects
         private void iconButton5_Click(object sender, EventArgs e)
         {
             this.Close();
+        }
+
+        private void AddProject_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }

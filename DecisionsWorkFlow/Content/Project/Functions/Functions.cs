@@ -16,15 +16,18 @@ namespace DecisionsWorkFlow.Content.Project.Functions
     {
         private DatabaseContent database = new DatabaseContent();
 
+        private Project projectForm;
+
         public int project;
 
         private string queryText = "";
 
         private bool defaultText = false;
 
-        public Functions(int _project)
+        public Functions(int _project, Project _projectForm)
         {
             project = _project;
+            projectForm = _projectForm;
             InitializeComponent();
         }
 
@@ -96,6 +99,24 @@ namespace DecisionsWorkFlow.Content.Project.Functions
         private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
         {
             LoadPanels();
+        }
+
+        private void iconButton2_Click(object sender, EventArgs e)
+        {
+            AddFunction function = new AddFunction(project);
+            function.ShowDialog();
+            LoadPanels();
+        }
+
+        private void iconButton4_Click(object sender, EventArgs e)
+        {
+            projectForm.Show();
+            this.Hide();
+        }
+
+        private void Functions_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            Application.Exit();
         }
     }
 }

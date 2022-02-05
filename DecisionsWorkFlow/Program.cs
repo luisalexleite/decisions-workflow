@@ -1,4 +1,7 @@
-﻿using DecisionsWorkFlow.Start;
+﻿using DecisionsWorkFlow.Content.Project;
+using DecisionsWorkFlow.Content.Project.Functions;
+using DecisionsWorkFlow.Content.Project.Students;
+using DecisionsWorkFlow.Start;
 using System;
 using System.Collections.Generic;
 using System.Linq;

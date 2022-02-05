@@ -83,6 +83,7 @@
             this.iconButton5.TabIndex = 21;
             this.iconButton5.Text = "Cancelar";
             this.iconButton5.UseVisualStyleBackColor = true;
+            this.iconButton5.Click += new System.EventHandler(this.iconButton5_Click);
             // 
             // iconButton3
             // 
